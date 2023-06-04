@@ -1,5 +1,5 @@
 <?php  include_once("config.php");
-error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
+
 if(isset($_GET['scrn']) && !empty($_GET['scrn'])){
 	$listmodulename = $_GET['scrn'];
 	

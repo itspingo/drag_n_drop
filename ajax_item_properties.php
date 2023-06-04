@@ -1,11 +1,9 @@
-<?php 
+<?php include_once("config.php");
 
- include_once("config.php");
-error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
 	$itemtype = $_POST['itemtype'];
 	$vdivid = $_POST['divid'];
 	
-//http://localhost:8080/test/dragndrop/designer/ajax_item_properties.php?itemtype=text_input&divid=456
+
 	$sqlitem = "select * from dznr_module_fields where divid='".$vdivid."'";
 	//echo $sqlitem;
 	$resitem = mysqli_query($dbcon, $sqlitem);

@@ -1,5 +1,5 @@
 <?php include_once("config.php");
-error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
+
 $divid =  $_POST["divid"];
 $display_seq = $_POST["seqno"];
 

@@ -1,5 +1,5 @@
 <?php include_once("config.php");
-error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
+
 $clientid = '10' ;
 $module_name = $_POST["module_name"];  
 $divid =  $_POST["divid"];

@@ -1,5 +1,5 @@
 <?php session_start(); ob_start(); 
-
+error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
 //ini_set('date.timezone', 'Europe/London');
 //date_default_timezone_set('Europe/London');
 

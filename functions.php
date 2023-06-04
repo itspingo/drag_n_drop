@@ -1,6 +1,6 @@
 <?php 
 //include_once('config.php');
-
+error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
 
 if($_SERVER['HTTP_HOST'] =='localhost'){
 	$path = "/snoobix/";	

@@ -1,5 +1,4 @@
 <?php include_once("config.php");
-	error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);
 	$vdivid = $_POST['item_id'];    
 	$modulename = $_POST['module_name'];    
 		
