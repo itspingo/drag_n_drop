@@ -1,18 +1,29 @@
+     <div class="row">
+     		<div class="col-6">
+     			
+     		</div>
+     		<div class="col-6">
+     			
+     		</div>
+     </div>
+
+
+
        <center>
        <div style="width: 90%; ">
        	<label> Grid Columns</label>
-       	<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
+       	<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" >
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
 				 <span class="row" >
-					<span class="col-12 dropzone"  ></span>
+					<span class="col-12 dropzone" ></span>
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col"  style="margin-left:10px; margin-right:10px;" >
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
@@ -24,7 +35,7 @@
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
+			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;">
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
@@ -37,7 +48,7 @@
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" >
 				<span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
@@ -76,7 +87,7 @@
       <div class="accordion-body">
       			
 				
-				<p name="column_heading" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item"  data-item-seq="0" >
+				<p name="column_heading" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">						
 						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
@@ -128,7 +139,7 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        	<p name="text_input"  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+        	<p name="text_input"  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -148,7 +159,7 @@
 				
 			</p>
 			
-			<p name="number_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="number_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -168,7 +179,7 @@
 				
 			</p>
 			
-			<p name="date_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="date_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -188,7 +199,7 @@
 				</span>
 			</p>
 			
-			<p name="password_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="password_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -208,7 +219,7 @@
 				</span>
 			</p>
 			
-			<p name="email_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="email_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -228,7 +239,7 @@
 				</span>
 			</p>
 			
-			<p name="url_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="url_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -248,7 +259,7 @@
 				</span>
 			</p>
 			
-			<p name="display_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="display_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -268,7 +279,7 @@
 				</span>
 			</p>
 			
-			<p name="nondb_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="nondb_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -288,7 +299,7 @@
 				</span>
 			</p>
 			
-			<p name="text_area" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="text_area" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 				<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -308,7 +319,7 @@
 				</span>
 			</p>
 			
-			<p name="drop_down" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="drop_down" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -332,7 +343,7 @@
 				</span>
 			</p>
 			
-			<p name="multi_choice" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="multi_choice" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -358,7 +369,7 @@
 
 
 
-			<p name="check_box" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="check_box" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span class="row">
 					<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 						<label><input type="checkbox" /> Check Box</label>
@@ -370,7 +381,7 @@
 				</span>
 			</p>
 			
-			<p name="radio_button" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="radio_button" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span class="row">
 					<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 						<label><input type="radio"  /> Radio Button</label>
@@ -384,7 +395,7 @@
 			</p>
 
 
-			<p name="referenced_data" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="referenced_data" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -419,7 +430,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p name="single_file" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+        <p name="single_file" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -439,7 +450,7 @@
 				</span>
 			</p>
 			
-			<p name="multiple_files" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<p name="multiple_files" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -459,7 +470,7 @@
 				</span>
 			</p>
 			
-			<p name="single_image" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="single_image" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -479,7 +490,7 @@
 				</span>
 			</p>
 			
-			<p name="multiple_images" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<p name="multiple_images" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -516,7 +527,7 @@
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p name="rich_text_editor" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item"  data-item-seq="0">
+        <p name="rich_text_editor" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item"  >
 				
 					<span class="row">
 						<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -555,14 +566,14 @@
 
 
  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingSix">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
         Sub Modules
       </button>
     </h2>
-    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        	<p name="submodule" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" style="margin-left:10px;margin-right:10px;" >
+        	<p name="submodule" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" style="margin-left:10px;margin-right:10px;" >
 				
 					<span class="row" style="background-color:#ccccff;">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >

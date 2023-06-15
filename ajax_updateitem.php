@@ -247,7 +247,10 @@
 			<span class="row">
 				<span class="col-12" id="<?php echo 'input_'.$vdivid; ?>" >
 					<textarea id="<?php echo 'rich_text_editor_'.$vdivid; ?>" class="form-control" style="width:100%" ></textarea>
-					<script> new nicEditor({iconsPath : 'images/nicEditorIcons.gif'}).panelInstance('<?php echo "rich_text_editor_".$vdivid; ?>'); </script>
+					<script> new nicEditor({iconsPath : 'images/nicEditorIcons.gif'}).panelInstance('<?php echo "rich_text_editor_".$vdivid; ?>'); 
+					$('.nicEdit-panelContain').parent().width('100%');
+						$('.nicEdit-panelContain').parent().next().width('98%');
+						$('.nicEdit-main').width('100%');</script>
 				</span>
 			</span>
 			

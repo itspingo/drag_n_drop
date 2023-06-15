@@ -25,15 +25,9 @@
 	<script type="text/javascript" src="http://www.marcorpsa.com/ee/plugins/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 	<script type="text/javascript" src="http://www.marcorpsa.com/ee/plugins/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 	<script>
-	$(function() {
-		$(".fancybox").fancybox({
-		  'type' : 'iframe'
-		  });		  
-	});
+	$(function() {  $(".fancybox").fancybox({  'type' : 'iframe' });		  });
 	  
 	</script>
-		
-  
 	 <style>
 		
 		.dropzone{
@@ -54,26 +48,74 @@
 	</style>
 
 	<style>
-#divfields_list {
-       position: fixed;
+#divfields_list 
+{
+     /*position: fixed;*/
 	   overflow-y: scroll; 
 	   height:550px;
-	   width:275px;
-	   /*margin-top: -18%;*/
-        }
+	   width:100%;
+	 	   /*margin-top: -18%;*/
+}
 	#sidepanel{
-		width:240px;
+/*		width:240px;*/
 		margin-left:5px;
 	}	
+	#divfields_list2 
+{
+     /*position: fixed;*/
+	   overflow-x: scroll; 
+	   overflow-y: ;
+	   height:100px;
+	   width:100%;
+	 	   /*margin-top: -18%;*/
+}
+	#sidepanel2{
+/*		width:240px;*/
+		margin-left:5px;
+	}
+	#divfields_list::-webkit-scrollbar {
+  width: 5px;
+
+  margin-left: 10px;
+}
+#divfields_list::-webkit-scrollbar-track {
+  background-color: transparent;
+
+}
+#divfields_list::-webkit-scrollbar-thumb {
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color:  rgba(12, 99, 228, 0.8);
+   border-radius: 5px;
+   max-height: 5px;
+}
 	#sortablelist{
 		min-height: 550px;
 	}
+	.nicEdit-panelContain:has(div){
+		width: 100%;
+	}
+	.mobile-menu{
+		display: none;
+	}
+@media (max-width: 575px) {
+  .window-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.myPlaceholder {
+      margin-top: 50px;
+    }
 </style>
 
   </head>
   <body>
+
   <?php error_reporting(E_ALL && ~E_WARNING && ~E_NOTICE);  ?>
-	<div class="container" >
+	<div class="container-fluid " >
 	
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
 	
@@ -89,7 +131,7 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-  
+  <div class="container mt-5" >
 		<div class="row " >
 								
 			<!-- Column -->
@@ -199,30 +241,47 @@
 			
 			
 		</div>
+	</div>
 				
 
 
   </div>
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+  	<!-- Mobile Menu Starts here -->
   
-  <div class="row" style="margin-top:20px;">
-    <div class="col-3" style="background-color:white">
-      <div id="divfields_list" style="display:block;margin-left:-10px;" >
+		  <!-- <div class="row" style=" margin-top:20px; margin-right: 10px;">
+		    <div class="col-sm-12 mobile-menu" style=" background-color:white">
+		      <div id="divfields_list2" style="display:block;" >
+						<div id="sidepanel2" class="draggable content" >
+							<?php include('toppanel.php'); ?>
+						</div>
+						<div class="container" style="margin-top:30px">
+								<div class="d-grid gap-2">
+										<input type="button" class="btn btn-info btn-sm" onClick="javascript:show_code();" value="Show Code" />	
+										<input type="button" class="btn btn-success btn-sm" onClick="javascript:save_module();" value="Submit" />
+								</div>
+						</div>
+					</div>
+		    </div>
+		  </div> -->
 
-		<div id="sidepanel" class="draggable content" >
-			<?php include('sidepanel.php'); ?>
-		</div>
-		<input type="button" class="btn btn-info btn-sm" onClick="javascript:show_code();" value="Show Code" />	
-		<input type="button" class="btn btn-success btn-sm" onClick="javascript:save_module();" value="Submit" />	
-	</div>
-	
+  <!-- Mobile Menu Ends here -->
+  <div class="row" style="margin-top:20px;margin-right: 10px;">
+    <div class="col-sm-4 col-md-3 col-lg-3 window-menu" style="background-color:white">
+      <div id="divfields_list" style="display:block;margin-left:-10px;" >
+				<div id="sidepanel" class="draggable content" >
+					<?php include('sidepanel.php'); ?>
+				</div>
+				<div class="container" style="margin-top:30px">
+						<div class="d-grid gap-2">
+								<input type="button" class="btn btn-info btn-sm" onClick="javascript:show_code();" value="Show Code" />	
+								<input type="button" class="btn btn-success btn-sm" onClick="javascript:save_module();" value="Submit" />
+						</div>
+				</div>
+			</div>
     </div>
-	
-    <div id="sortablelist" class="dropzone col-9 list-group" style="min-height:250px; background-color:#F9F9F9; border:1px black dashed; min-height: 550px;"  > 
-	
-    </div>
-	
-	
+    <div id="sortablelist" class="dropzone col-sm-8 col-md-9 col-lg-9 list-group content-parent" style="min-height:250px; background-color:#F9F9F9; border:1px black dashed; min-height: 550px;"  > 
+	  </div>
   </div>
 
 		<div style="display:block;" class="fancybox">
@@ -247,9 +306,9 @@
 
 
 	<footer>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> 
+     
 	</footer>
-	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> 
 	<script>
 
 		new Sortable(sortablelist, {
