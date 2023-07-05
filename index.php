@@ -45,6 +45,19 @@
 		  background-color: #f7f7f7;
 		}
 
+
+a#addTabBtn:hover,
+a#addTabBtn:focus 
+   {
+    border-color: transparent;
+    box-shadow:transparent;
+}
+
+a#addTabBtn {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 	</style>
 
 	<style>
@@ -309,6 +322,15 @@
      
 	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> 
+
+
+	 <!-- sub-modules with tab script starts here -->
+
+
+ 
+<!-- sub-modules with tab script ends here -->
+
+
 	<script>
 
 		new Sortable(sortablelist, {
@@ -432,11 +454,17 @@
 			}else {
 				var vonlistpag = '';
 			}
+			//added by hoor
+			if (document.getElementById('parent_grid_id_input')) {
+				var  vparent_grid_id_input = document.getElementById('parent_grid_id_input').value;  
+			}else {
+				var vparent_grid_id_input = '';
+			}
 			
 			//alert("vdivid: "+vdivid);	
 			var datastring	= "vdivid="+vdivid+"&vmodule_name="+vmodule_name+"&vfieldid"+vfieldid+"&vitemtype="+vitemtype+"&vfield_label="+vfield_label+"&vfield_name="+vfield_name+"&vfield_type="+vfield_type+"&visrequired="+visrequired+
 								"&vdisplay_seq="+vdisplay_seq+"&vdefault_value="+vdefault_value+"&vrange_min="+vrange_min+"&vrange_max="+vrange_max+"&vitem_values="+vitem_values+"&vlist_type="+vlist_type+
-								"&vstaticlist="+vstaticlist+"&vcodelist="+vcodelist+"&vnewcodelist="+vnewcodelist+"&vlistmodulename="+vlistmodulename+"&vlistmoduleitem="+vlistmoduleitem+"&vonlistpag="+vonlistpag;
+								"&vstaticlist="+vstaticlist+"&vcodelist="+vcodelist+"&vnewcodelist="+vnewcodelist+"&vlistmodulename="+vlistmodulename+"&vlistmoduleitem="+vlistmoduleitem+"&vonlistpag="+vonlistpag+"&vparent_grid_id_input="+vparent_grid_id_input;
 								
 								
 			
@@ -449,7 +477,11 @@
 				data : datastring,
 				success: function(response)  {
 					//alert(response);
-					$("#"+vdivid).html(response); 
+					
+					
+						  $("#"+vdivid).html(response); 
+					
+					
 					//console.log(document.getElementById('contentdiv').innerHTML);
 				}
 			})
@@ -555,5 +587,14 @@
 	
 	<script src="./mozila_dragndrop_script.js"></script>
 	
+	
   </body>
 </html>
+
+
+
+
+
+
+
+

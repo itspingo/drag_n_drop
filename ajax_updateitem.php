@@ -1,6 +1,8 @@
+
 <?php include_once("config.php");
 
-	$vdivid = $_POST["vdivid"];    
+	$vdivid = $_POST["vdivid"];  
+	$vparent_grid_id_input=$_POST['vparent_grid_id_input'];  
 	$vmodule_name = $_POST["vmodule_name"];    
 	//$vfieldid = $_POST["vfieldid"];    
 	$vitemtype = $_POST["vitemtype"];    
@@ -32,6 +34,7 @@
 	$vlistmodulename = $_POST["vlistmodulename"];    
 	$vlistmoduleitem = $_POST["vlistmoduleitem"];    
 	$vonlistpag = $_POST["vonlistpag"];
+
 		
 	$sqlexist = "select count(1) as recs from dznr_module_fields where divid = '".$vdivid."' ";
 	$resexist = mysqli_query($dbcon, $sqlexist);
@@ -40,6 +43,7 @@
 	if($rowexist['recs'] == 0){
 		$sqlinsrt = "insert into dznr_module_fields set 
 			module_name = '".$vmodule_name."',
+			parent_grid_id = '".$vparent_grid_id_input."',
 			divid = '".$vdivid."',
 			field_label = '".$vfield_label."', 
 			field_name = '".$vfield_name."', 
@@ -67,6 +71,7 @@
 		$sqlupdt="update dznr_module_fields set 
 			module_name = '".$vmodule_name."',
 			
+			parent_grid_id = '".$vparent_grid_id_input."',
 			field_label = '".$vfield_label."', 
 			field_name = '".$vfield_name."', 
 			field_type = '".$vfield_type."', 
@@ -516,15 +521,18 @@
 
 
 <?php } else if($vitemtype=='submodule'){ 
-			$vdefault_value = 150;
-			$sqlmodl = "select 	m.module_name, m.page_name, m.module_type, m.menutype, m.add_page, m.edit_page, m.view_page, m.duplicate_page, m.list_page, m.application, m.module_descr, m.table_name, m.clientid, m.sql_script_file, m.php_script_files, m.config_file, 
-							f.dznr_moduleid, f.field_label, f.field_name, f.field_type, f.isrequired, f.display_pos, f.default_value, f.range_min, f.range_max, f.list_type, f.item_values, f.staticlist, f.codelist, f.newcodelist, f.listmodulename, f.listmoduleitem, f.codes_list_name, f.onlistpag
+			// $vdefault_value = 150;
+			$sqlmodl = "select 	
+			     m.module_name, m.page_name, m.module_type, m.menutype, m.add_page, m.edit_page, m.view_page, m.duplicate_page, m.list_page, m.application, m.module_descr, m.table_name, m.clientid, m.sql_script_file, m.php_script_files, m.config_file, 
+				
+				f.moduleid, f.field_label, f.field_name, f.field_type, f.isrequired, f.display_pos, f.default_value, f.range_min, f.range_max, f.list_type, f.item_values, f.staticlist, f.codelist, f.newcodelist, f.listmodulename, f.listmoduleitem, f.codes_list_name, f.onlistpag
 						from dznr_modules m, dznr_module_fields f 
-						where m.id = f.dznr_moduleid
-						  and m.id = '150'
-						  and m.active='Y' and f.active='Y'
-						  and f.onlistpag = 'Y'
-						  and m.clientid =  '4' ";                      // '".$clientid."' ";
+						   where 
+						       m.id = f.moduleid
+						   and m.id = '".$vdefault_value."'
+						   and m.active='1' and f.active='Y'
+						   and f.onlistpag = 'Y'
+						   ";                      // '".$clientid."' ";
 						  
 			//echo $sqlmodl;
 			$resmodl = mysqli_query($dbcon, $sqlmodl);
@@ -539,7 +547,7 @@
 			
 			<span class="row">
 				
-				<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+				<span id="<?php //echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
 					<a style="cursor:pointer;color:blue;"  onClick="showattribs('submodule', <?php echo $vdivid; ?>)" ><i class="bi bi-gear"></i></a>	
 					<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)" ><i class="bi bi-trash"></i></a>
 				</span>
@@ -547,29 +555,293 @@
 			
 			<span class="row">
 				<span class="col-12" id="<?php echo 'input_'.$vdivid; ?>">
-					<table width="100%">
-					<tr bgcolor="#ccccff">
-						<td><h4 align="left"><b><?php echo $vfield_label; ?></b></h4></td>
-					</tr></table>
+						 <table width="100%">
+									<tr bgcolor="#ccccff">
+										<td>
+											<h4 align="left"><b><?php echo $vfield_label; ?></b></h4>
+										</td>
+									</tr>
+								</table>
 				
-					<div id="row-fluid" style="overflow:scroll;">
-						<table style="border: 1px solid gray;" id="table" width="100%">
-							<tbody>
-							<tr>
-							<?php
-								echo $submodule_heading_row;
-							?>
-							</tr>
-							<tr>
-							<?php
-								echo $submodule_data_row;
-							?>
-							</tr>
-							</tbody>
-						</table>
-					</div>
-					
+							    <div id="row-fluid" style="overflow:scroll;">
+									<table style="border: 1px solid gray;" id="table" width="100%">
+										<tbody>
+										<tr>
+										<?php
+											echo $submodule_heading_row;
+										?>
+										</tr>
+										<tr>
+										<?php
+											echo $submodule_data_row;
+										?>
+										</tr>
+										</tbody>
+									</table>
+							    </div>
 				</span>
 			</span>
+
+<?php } else if($vitemtype=='tab_link'){ ?>
+
 			
-<?php } else { echo "Nothing to display for item type: ".$vitemtype; }?>
+				<span><?php echo $vfield_label; ?></span>
+				<span id="controls_<?php echo $vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="font-size: 12px; margin-left: 30px;">
+					<a style="cursor:pointer;color:blue;" onclick="showattribs('tab_link', '<?php echo $vdivid; ?>')" draggable="false">
+						<i class="bi bi-gear"></i>
+					</a>
+					<a style="cursor:pointer;color:red;" onclick="remove_tab_item('<?php echo substr($vdivid, strlen("tablink")); ?>')" draggable="false">
+						<i class="bi bi-trash"></i>
+					</a>
+				</span>
+
+			
+			
+<?php } else if($vitemtype=='grid-12'){ ?>
+
+			
+				
+				 <span class="row" >	
+					<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)" ><i class="bi bi-trash"></i></a>
+					</span>
+				</span>
+				 <span class="row" >
+					<span class="col-12 dropzone"  ></span>
+				</span>
+			
+
+			
+			
+<?php }
+
+
+else if($vitemtype=='grid-6'){ ?>
+
+			
+				
+				<span class="row" >	
+					<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)" ><i class="bi bi-trash"></i></a>
+					</span>
+				</span>
+				 <span class="row" >
+					<span class="col-6 dropzone" data-grid-position="0"  ></span>
+					<span class="col-6 dropzone" data-grid-position="1"></span>
+				</span>
+			
+
+			
+			
+<?php }
+
+
+else if($vitemtype=='grid-4'){ ?>
+
+			
+				<span class="row" >	
+					<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)" ><i class="bi bi-trash"></i></a>
+					</span>
+				</span>
+				 <span class="row" >
+					<span class="col-4 dropzone" data-grid-position="0"></span>
+					<span class="col-4 dropzone" data-grid-position="1"></span>
+					<span class="col-4 dropzone" data-grid-position="2"></span>
+				</span>
+			
+
+			
+			
+<?php }
+
+
+else if($vitemtype=='grid-3'){ ?>
+
+			
+				
+				 <span class="row" >	
+					<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)" ><i class="bi bi-trash"></i></a>
+					</span>
+				</span>
+				 <span class="row" >
+					<span class="col-3 dropzone" data-grid-position="0"></span>
+					<span class="col-3 dropzone" data-grid-position="1"></span>
+					<span class="col-3 dropzone" data-grid-position="2"></span>
+					<span class="col-3 dropzone" data-grid-position="3"></span>
+				</span>
+			
+
+			
+			
+<?php }
+ else if($vitemtype =="Incremental_tabs"){ ?>
+<span class="row" style="display: none;">
+	<span class="col-12 float-left" id="<?php echo 'label_'.$vdivid; ?>" >
+		<label style="background-color:white;font-size:18px"><?php echo $vfield_label; ?></label>
+	</span>
+	<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
+		<a style="cursor:pointer;color:blue;"  onClick="showattribs('Incremental_tabs', <?php echo $vdivid; ?>)" >
+			<i class="bi bi-gear"></i>
+		</a>	
+		<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)">
+			<i class="bi bi-trash"></i>
+		</a>
+	</span>
+</span>
+
+
+<span class="row">
+	<span class="col-12" id="<?php echo 'input_'.$vdivid; ?>" >
+		<span id="<?php echo 'tabsContainer_'.$vdivid; ?>" >
+			<span class="nav nav-tabs" id="myTabs">
+
+
+	<?php
+	$query="SELECT * FROM `dznr_module_fields` WHERE parent_grid_id=$vdivid";
+	//echo $sqlmodl;
+	$res = mysqli_query($dbcon, $query);
+	while($row = mysqli_fetch_assoc($res))
+	{ 
+	?>
+	<span class="nav-item" role="presentation">
+	<a class="nav-link active" href="#tab<?php echo str_replace("tablink", "", $row['divid']) ?>" id="<?php echo $row['divid']?>" data-bs-toggle="tab" aria-selected="true" role="tab">
+	<span>Tab 1</span> 
+	<span id="controls_1_48837" class="col-12 float-right item_icons item_icons_show" style="font-size: 12px; margin-left: 30px;">
+	<a style="cursor:pointer;color:blue;" onclick="showattribs('tab_link', '<?php echo $row['divid']?>')">
+	<i class="bi bi-gear"></i>
+	</a>
+	<a style="cursor:pointer;color:red;" onclick="remove_tab_item('<?php echo str_replace("tablink", "",$row['divid'] )?>')">
+	<i class="bi bi-trash"></i>
+	</a>
+	</span>
+	</a>
+
+	<?php
+	}
+	?>
+
+
+
+
+
+	<span class="nav-item">
+	<a id="<?php echo 'addTabBtn_'.$vdivid; ?>" class="nav-link btn btn-primary"  data-bs-toggle="tab" aria-selected="true" role="tab">+</a>
+	</span>
+
+
+
+	</span>
+			</span>
+
+			<span class="<?php echo 'tab-content_'.$vdivid; ?>  tab-content mt-3" >
+						<?php
+	$query="SELECT * FROM `dznr_module_fields` WHERE parent_grid_id=$vdivid";
+	//echo $sqlmodl;
+	$i=1;
+	$res = mysqli_query($dbcon, $query);
+	while($row = mysqli_fetch_assoc($res))
+
+	{ 
+	?>
+	<span class="tab-pane fade active show" id="tab<?php echo str_replace("tablink", "",$row['divid'] )?>" data-tab-number="tab<?php echo $i;?>" role="tabpanel" aria-labelledby="#<?php echo $row['divid']?>"><span class="dropzone list-group tab-parent mt-3"> </span></span>
+	
+	<?php $i++; } ?>
+			</span>
+
+
+		
+		</span>
+	</span>
+
+				
+				<script type="text/javascript">
+	(function() {
+
+  const tabsContainer = document.getElementById('tabsContainer_<?php echo $vdivid; ?>');
+  const addTabBtn = document.getElementById('addTabBtn_<?php echo $vdivid; ?>');
+  var mytarget;
+  let tabCounter = <?php echo $i ?>;
+
+  addTabBtn.addEventListener('click', () => {
+    const newTab = document.createElement('span');
+    newTab.classList.add('nav-item');
+
+    const newTabLink = document.createElement('a');
+    newTabLink.classList.add('nav-link');
+    newTabLink.href = `#tab${tabCounter}_<?php echo $vdivid; ?>`;
+    newTabLink.id = 'tablink' + tabCounter +'_<?php echo $vdivid; ?>';
+    newTabLink.setAttribute('data-bs-toggle', 'tab');
+    newTabLink.setAttribute('aria-selected', 'true');
+    newTabLink.setAttribute('role', 'tab');
+    
+    newTabLink.innerHTML = `<span >Tab ${tabCounter}</span> `;
+
+    newTab.appendChild(newTabLink);
+
+    const activeTab = tabsContainer.querySelector('span.nav-item.active');
+    if (activeTab) { activeTab.classList.remove('active'); }
+
+    tabsContainer.querySelector('span.nav-tabs').insertBefore(newTab, addTabBtn.parentNode);
+
+    const tabPane = document.createElement('span');
+    tabPane.classList.add('tab-pane', 'fade');
+    tabPane.id = `tab${tabCounter}_<?php echo $vdivid; ?>`;
+    tabPane.setAttribute('data-tab-number', `tab${tabCounter}`);
+    tabPane.innerHTML = `<span  class="dropzone list-group tab-parent mt-3"  > </span>`;
+
+    tabsContainer.parentElement.querySelector('.tab-content_<?php echo $vdivid; ?>').appendChild(tabPane);
+
+    // Activate the newly added tab
+    new bootstrap.Tab(newTabLink).show();
+
+
+    // Apply jQuery styling
+    $(tabPane).on('show.tab', function() {
+    
+      $(this).css({
+        'display': 'block',
+        'opacity': '1'
+      });
+    }).on('hide.tab', function() {
+      $(this).css({
+        'display': 'none',
+        'opacity': ''
+      });
+    });
+const controlsSpan = document.createElement('span');
+    controlsSpan.id = `controls_${tabCounter}_<?php echo $vdivid; ?>`;
+    controlsSpan.className = 'col-12 float-right item_icons item_icons_show';
+    controlsSpan.style.cssText = 'font-size:12px; margin-left:30px';
+
+    controlsSpan.innerHTML = `
+      <a style="cursor:pointer;color:blue;" onClick="showattribs('tab_link', 'tablink${tabCounter}_<?php echo $vdivid; ?>')"><i class="bi bi-gear"></i></a>
+      <a style="cursor:pointer;color:red;" onClick="remove_tab_item('${tabCounter}_<?php echo $vdivid; ?>')"><i class="bi bi-trash"></i></a>
+    `;
+    newTabLink.appendChild(controlsSpan);
+    newTabLink.addEventListener('show.bs.tab', () => {
+    controlsSpan.style.display = 'inline';
+});
+
+newTabLink.addEventListener('hide.bs.tab', () => {
+  controlsSpan.style.display = 'none';
+});
+    tabCounter++;
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const myTabs = new bootstrap.Tab(tabsContainer);
+    myTabs.show();
+    addTabBtn.style.display = 'inline-block';
+  });
+})();
+
+	</script>
+		
+ <?php }
+ else { 
+
+ 	echo "Nothing to display for item type: ".$vitemtype;
+
+ 	 }?>

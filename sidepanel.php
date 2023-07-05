@@ -1,7 +1,7 @@
        <center>
        <div style="width: 90%; ">
        	<label> Grid Columns</label>
-       	<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
+       	<p name="grid-12" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
@@ -12,42 +12,42 @@
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			<p name="grid-6" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
 				 <span class="row" >
-					<span class="col-6 dropzone" ></span>
-					<span class="col-6 dropzone" ></span>
+					<span class="col-6 dropzone" data-grid-position="0"  ></span>
+					<span class="col-6 dropzone" data-grid-position="1"></span>
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
+			<p  name="grid-4" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
 				 <span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
 				 <span class="row" >
-					<span class="col-4 dropzone" ></span>
-					<span class="col-4 dropzone" ></span>
-					<span class="col-4 dropzone" ></span>
+					<span class="col-4 dropzone" data-grid-position="0"></span>
+					<span class="col-4 dropzone" data-grid-position="1"></span>
+					<span class="col-4 dropzone" data-grid-position="2"></span>
 				</span>
 			</p>
 
-			<p  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			<p name="grid-3" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
 				<span class="row" >	
 					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
 				 <span class="row" >
-					<span class="col-3 dropzone" ></span>
-					<span class="col-3 dropzone" ></span>
-					<span class="col-3 dropzone" ></span>
-					<span class="col-3 dropzone" ></span>
+					<span class="col-3 dropzone" data-grid-position="0"></span>
+					<span class="col-3 dropzone" data-grid-position="1"></span>
+					<span class="col-3 dropzone" data-grid-position="2"></span>
+					<span class="col-3 dropzone" data-grid-position="3"></span>
 				</span>
 			</p>
 
@@ -92,10 +92,6 @@
 					</span>
 				</span>
 			</p>
-			
-			
-			
-			
       </div>
     </div>
   </div>
@@ -568,7 +564,7 @@
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 							<label style="font-size:20px"><b>Sub-Module</b></label>
 						</span>
-						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+						<span id="<?php echo '*'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 							<a style="cursor:pointer;color:blue;"  onClick="showattribs('submodule', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
 							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 						</span>
@@ -598,7 +594,133 @@
 
 
 
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSeven">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+       Incremental Tabs
+      </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p name="Incremental_tabs" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item"  data-item-seq="0">
+				
+					<span class="row" style="display: none;">
+						<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
+							<label style="background-color:white;font-size:18px">Tabs</label>
+						</span>
+						<span  class="col-12 float-right item_icons item_icons_show" style="align:right;display:none" align="right" >
+							<a style="cursor:pointer;color:blue;"  onClick="showattribs('Incremental_tabs', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
+							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+						</span>
+					</span>
+					<span class="row">
+						<span class="col-12" id="<?php echo 'input_'.$itmid; ?>" >
+								<span id="<?php echo 'tabsContainer_'.$itmid; ?>" >
+							    <span class="nav nav-tabs" id="myTabs">
+							      
+							      <span class="nav-item">
+							        <a id="<?php echo 'addTabBtn_'.$itmid; ?>" class="nav-link btn btn-primary"  data-bs-toggle="tab" aria-selected="true" role="tab">+</a>
+							      </span>
+							    </span>
+							  </span>
 
+							  <span class="<?php echo 'tab-content_'.$itmid; ?>  tab-content mt-3" >
+							  
+							  		
+							  	</span>
+							 </span>
+	
+						</span>
+
+				
+				<script type="text/javascript">
+	(function() {
+  const tabsContainer = document.getElementById('tabsContainer_<?php echo $itmid; ?>');
+  const addTabBtn = document.getElementById('addTabBtn_<?php echo $itmid; ?>');
+  var mytarget;
+  let tabCounter = 1;
+
+  addTabBtn.addEventListener('click', () => {
+    const newTab = document.createElement('span');
+    newTab.classList.add('nav-item');
+
+    const newTabLink = document.createElement('a');
+    newTabLink.classList.add('nav-link');
+    newTabLink.href = `#tab${tabCounter}_<?php echo $itmid; ?>`;
+    newTabLink.id = 'tablink' + tabCounter +'_<?php echo $itmid; ?>';
+    newTabLink.setAttribute('data-bs-toggle', 'tab');
+    newTabLink.setAttribute('aria-selected', 'true');
+    newTabLink.setAttribute('role', 'tab');
+    
+    newTabLink.innerHTML = `<span >Tab ${tabCounter}</span> `;
+
+    newTab.appendChild(newTabLink);
+
+    const activeTab = tabsContainer.querySelector('span.nav-item.active');
+    if (activeTab) { activeTab.classList.remove('active'); }
+
+    tabsContainer.querySelector('span.nav-tabs').insertBefore(newTab, addTabBtn.parentNode);
+
+    const tabPane = document.createElement('span');
+    tabPane.classList.add('tab-pane', 'fade');
+    tabPane.id = `tab${tabCounter}_<?php echo $itmid; ?>`;
+    tabPane.setAttribute('data-tab-number', `tab${tabCounter}`);
+    tabPane.innerHTML = `<span  class="dropzone list-group tab-parent mt-3"  > </span>`;
+
+    tabsContainer.parentElement.querySelector('.tab-content_<?php echo $itmid; ?>').appendChild(tabPane);
+
+    // Activate the newly added tab
+    new bootstrap.Tab(newTabLink).show();
+
+
+    // Apply jQuery styling
+    $(tabPane).on('show.tab', function() {
+    
+      $(this).css({
+        'display': 'block',
+        'opacity': '1'
+      });
+    }).on('hide.tab', function() {
+      $(this).css({
+        'display': 'none',
+        'opacity': ''
+      });
+    });
+const controlsSpan = document.createElement('span');
+    controlsSpan.id = `controls_${tabCounter}_<?php echo $itmid; ?>`;
+    controlsSpan.className = 'col-12 float-right item_icons item_icons_show';
+    controlsSpan.style.cssText = 'font-size:12px; margin-left:30px';
+
+    controlsSpan.innerHTML = `
+      <a style="cursor:pointer;color:blue;" onClick="showattribs('tab_link', 'tablink${tabCounter}_<?php echo $itmid; ?>')"><i class="bi bi-gear"></i></a>
+      <a style="cursor:pointer;color:red;" onClick="remove_tab_item('${tabCounter}_<?php echo $itmid; ?>')"><i class="bi bi-trash"></i></a>
+    `;
+    newTabLink.appendChild(controlsSpan);
+    newTabLink.addEventListener('show.bs.tab', () => {
+    controlsSpan.style.display = 'inline';
+});
+
+newTabLink.addEventListener('hide.bs.tab', () => {
+  controlsSpan.style.display = 'none';
+});
+    tabCounter++;
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const myTabs = new bootstrap.Tab(tabsContainer);
+    myTabs.show();
+    addTabBtn.style.display = 'inline-block';
+  });
+})();
+
+	</script>
+			</p>
+			
+			
+			
+      </div>
+    </div>
+  </div>
 
 
 

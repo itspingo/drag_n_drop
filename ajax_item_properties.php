@@ -2,7 +2,10 @@
 
 	$itemtype = $_POST['itemtype'];
 	$vdivid = $_POST['divid'];
-	
+	$itemSequence =$_POST['itemSequence'];
+    $parentId =$_POST['parentId'];
+
+    
 
 	$sqlitem = "select * from dznr_module_fields where divid='".$vdivid."'";
 	//echo $sqlitem;
@@ -98,6 +101,10 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
+										
 										
 									</div>
 									
@@ -142,7 +149,7 @@ function showlistmoduleitems(vlistmodulename){
 							<!-- Column -->
 							<div class="col-12">
 
-									<label class="strong">Field Label</label>
+									<label class="strong">Feld Label</label>
 									<input type="text" name="field_label"  id="field_label"  class="form-control" value="<?php echo $rowitem['field_label']; ?>" />
 									<?php echo '<p style="color:red;font-size:12px;">'.$error['field_label'].'</p>'; ?>
 									
@@ -157,7 +164,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
-										
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 									</div>
 									
 									
@@ -209,6 +218,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -245,6 +257,10 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
+
 										
 									</div>
 									
@@ -281,6 +297,10 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -318,6 +338,10 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -357,6 +381,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -396,6 +423,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -434,6 +464,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -472,6 +505,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -511,6 +547,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -550,6 +589,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -590,6 +632,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -628,6 +673,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -687,6 +735,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -739,6 +790,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -791,6 +845,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -842,6 +899,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -919,6 +979,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -927,18 +990,18 @@ function showlistmoduleitems(vlistmodulename){
 									<label class="strong">Existing Module Name</label>
 									<input type="hidden" name="hlistmodulename"  id="hlistmodulename"   value="<?php echo $listmodulename; ?>"  />
 									<?php 
-									$sqlscrn = "select table_name ,table_descr
-													from rptusrtables
-													where active='Y' 
-													and (clientid = '".$clientid."' or clientid = 'ALL')";
+									// $sqlscrn = "select table_name ,table_descr
+									// 				from rptusrtables
+									// 				where active='Y' 
+									// 				and (clientid = '".$clientid."' or clientid = 'ALL')";
 												
-									$rescrn = mysqli_query($dbcon, $sqlscrn);
+									// $rescrn = mysqli_query($dbcon, $sqlscrn);
 									?>
 									<select  name="listmodulename"  id="listmodulename" class="form-control" onchange="showlistmoduleitems(this.value)" >
 										<option value="">--Select--</option>
-										<?php while($rowscrn = mysqli_fetch_assoc($rescrn)){ ?>
-											<option value="<?php echo $rowscrn['table_name']; ?>" <?php if($listmodulename == $rowscrn['table_name']){ ?> SELECTED <?php } ?> ><?php echo $rowscrn['table_descr']; ?></option>
-										<?php } ?>
+										<?php //while($rowscrn = mysqli_fetch_assoc($rescrn)){ ?>
+											<option value="<?php //echo $rowscrn['table_name']; ?>" <?php //if($listmodulename == $rowscrn['table_name']){ ?>  SELECTED <?php //} ?> ><?php // echo $rowscrn['table_descr']; ?></option>
+										<?php //} ?>
 									</select>
 									
 									
@@ -949,17 +1012,17 @@ function showlistmoduleitems(vlistmodulename){
 										?>
 											<input type="hidden" name="hlistmoduleitem"  id="hlistmoduleitem"   value="<?php echo $listmoduleitem; ?>"  />
 											<?php 
-											$sqlmodlfelds = "select * 
-															from rptusrfields
-															where active='Y' 
-															and table_name = '".$listmodulename."'" ;   
-											$resmodlfelds = mysqli_query($dbcon, $sqlmodlfelds);
+											// $sqlmodlfelds = "select * 
+											// 				from rptusrfields
+											// 				where active='Y' 
+											// 				and table_name = '".$listmodulename."'" ;   
+											//$resmodlfelds = mysqli_query($dbcon, $sqlmodlfelds);
 											?>
 											<select  name="listmoduleitem"  id="listmoduleitem" class="form-control" >
 												<option value="">--Select--</option>
-												<?php while($rowmodlfelds = mysqli_fetch_assoc($resmodlfelds)){ ?>
-													<option value="<?php echo $rowmodlfelds['field_name']; ?>" <?php if($listmoduleitem == $rowmodlfelds['field_name']){ ?> SELECTED <?php } ?> ><?php echo $rowmodlfelds['field_descr']; ?></option>
-												<?php } ?>
+												<?php  //while($rowmodlfelds = mysqli_fetch_assoc($resmodlfelds)){ ?>
+													<option value="<?php //echo $rowmodlfelds['field_name']; ?>" <?php //if($listmoduleitem == $rowmodlfelds['field_name']){ ?> SELECTED <?php //} ?> ><?php //echo $rowmodlfelds['field_descr']; ?></option>
+												<?php //} ?>
 											</select>
 										<?php // } ?>
 									</div>
@@ -1016,6 +1079,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -1077,7 +1143,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
-										
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 										
 									</div>
 									
@@ -1125,7 +1193,9 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
-										
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 									</div>
 									
 									
@@ -1188,8 +1258,11 @@ function showlistmoduleitems(vlistmodulename){
 										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
 										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
 										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
-										
-									
+										+
+									    
+									    <!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
 									
 									
 										
@@ -1214,7 +1287,9 @@ function showlistmoduleitems(vlistmodulename){
 										<select  name="default_value"  id="default_value" class="form-control" >
 											<option value="">--Select--</option>
 										<?php
-											$sqlmodls = "select * from dznr_modules where  menutype='submodule' and clientid='4' ";    //".$clientid."
+											$sqlmodls = "select * from dznr_modules where  module_type='submodule'  ";
+											echo $sqlmodls;
+											//".$clientid."
 											$resmodls = mysqli_query($dbcon, $sqlmodls);
 											while($rowmodls = mysqli_fetch_assoc($resmodls)){
 										?>
@@ -1235,6 +1310,136 @@ function showlistmoduleitems(vlistmodulename){
 					</div>
 		
 			</div>
+	<?php } else if($itemtype=='tab_link'){ ?>
 	
+			<div class="widget-body">
+					
+						<!-- Row -->
+						<div class="row">
+						
+							<!-- Column -->
+							<div class="col-12">
+
+									<label class="strong">Tab Link Heading</label>
+									<input type="text" name="field_label"  id="field_label"  class="form-control" value="<?php echo $rowitem['field_label']; ?>" />
+									<?php echo '<p style="color:red;font-size:12px;">'.$error['field_label'].'</p>'; ?>
+									
+									<div style="display:none;">
+										<label class="strong">Field Type</label>
+										<input type="hidden"  name="field_type"  id="field_type" value="<?php echo $itemtype; ?>" />
+										
+										<label class="strong">Display Position</label>
+										<input type="hidden"  name="display_pos"  id="display_pos" value="<?php echo $rowitem['display_pos']; ?>" />
+										
+										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
+										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
+										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
+										
+									</div>
+									
+									
+									<a style="cursor:pointer;" class="btn btn-primary"  onClick="updateItem()" ><i></i>Done</a>
+									
+								
+							</div>
+							<!-- // Column END -->
+					</div>
+		
+			</div>
 	
-	<?php } else { echo "Nothing to display 1"; }?>
+	<?php } 
+
+	 else if($itemtype=='grid-12' || $itemtype=='grid-6' || $itemtype=='grid-4' || $itemtype=='grid-3' ){ ?>
+	
+			<div class="widget-body">
+					
+						<!-- Row -->
+						<div class="row">
+						
+							<!-- Column -->
+							<div class="col-12">
+
+									<label class="strong">Tab Link Heading</label>
+								<input type="text" name="field_label" id="field_label" class="form-control" value="<?php echo !empty($rowitem['field_label']) ? $rowitem['field_label'] : $itemtype; ?>" />
+
+									<?php echo '<p style="color:red;font-size:12px;">'.$error['field_label'].'</p>'; ?>
+									
+									<div style="display:none;">
+										<label class="strong">Field Type</label>
+										<input type="hidden"  name="field_type"  id="field_type" value="<?php echo $itemtype; ?>" />
+										
+										<label class="strong">Display Position</label>
+										<input type="hidden"  name="display_pos"  id="display_pos" value="<?php echo $rowitem['display_pos']; ?>" />
+										
+										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
+										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
+										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
+										
+									</div>
+									
+									
+									<a style="cursor:pointer;" class="btn btn-primary"  onClick="updateItem()" ><i></i>Done</a>
+									
+								
+							</div>
+							<!-- // Column END -->
+					</div>
+		
+			</div>
+	
+	<?php }
+
+
+	 else if($itemtype=='Incremental_tabs' ){ ?>
+	
+			<div class="widget-body">
+					
+						<!-- Row -->
+						<div class="row">
+						
+							<!-- Column -->
+							<div class="col-12">
+
+									<label class="strong">Tab Link Heading</label>
+								<input type="text" name="field_label" id="field_label" class="form-control" value="<?php echo !empty($rowitem['field_label']) ? $rowitem['field_label'] : $itemtype; ?>" />
+
+									<?php echo '<p style="color:red;font-size:12px;">'.$error['field_label'].'</p>'; ?>
+									
+									<div style="display:none;">
+										<label class="strong">Field Type</label>
+										<input type="hidden"  name="field_type"  id="field_type" value="<?php echo $itemtype; ?>" />
+										
+										<label class="strong">Display Position</label>
+										<input type="hidden"  name="display_pos"  id="display_pos" value="<?php echo $rowitem['display_pos']; ?>" />
+										
+										<input type="hidden"  name="divid"  id="divid" value="<?php echo $vdivid; ?>" />
+										<input type="hidden"  name="itemtype"  id="itemtype" value="<?php echo $itemtype; ?>" />
+										<input type="hidden"  name="fieldid"  id="fieldid" value="<?php echo $rowitem['fieldid']; ?>" />
+
+										<!-- Note: Hoor added the display sequence -->
+										<input type="hidden" name="display_seq" id="vdisplay_seq" value="<?php echo $itemSequence; ?>">
+										<input type="hidden" name="parent_grid_id_input" id="parent_grid_id_input" value="<?php echo $parentId; ?>">
+										
+									</div>
+									
+									
+									<a style="cursor:pointer;" class="btn btn-primary"  onClick="updateItem()" ><i></i>Done</a>
+									
+								
+							</div>
+							<!-- // Column END -->
+					</div>
+		
+			</div>
+	
+	<?php }
+
+	else { echo "Nothing to display 1"; }?>

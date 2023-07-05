@@ -1,6 +1,33 @@
 let dragged;
 let vsidepanel;
 
+// Note : Added by hoor 
+// this funtion add space before the item 
+
+ // Starts here
+function updateSpacing(){
+	if (event.target.classList.contains("dropzone")) {
+    if(event.target.getElementsByClassName("list-group-item").length > 0){
+	   const afterElement = getDragAfterElement(event.target, event.clientY);
+		  if (afterElement != null) 
+		  {
+		    $("#"+afterElement.id+"").addClass("myPlaceholder");
+		  } 
+    } 
+	}
+}
+// Ends here
+
+
+// Note : Added by hoor 
+
+// This function grabs the element that is next to the item being dragged in between 
+// e.g. The items on the dropzones are 1,2 and 3 is being dreeged between 1 & 2 
+// the function will grab 2
+
+
+ // Starts here
+
 function getDragAfterElement(container, y) {
   const draggableElements = [...container.querySelectorAll('.list-group-item:not(.dragging)')];
 
@@ -16,18 +43,8 @@ function getDragAfterElement(container, y) {
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
+ // Ends here
 
-function updateSpacing(){
-	if (event.target.classList.contains("dropzone")) {
-    if(event.target.getElementsByClassName("list-group-item").length > 0){
-	   const afterElement = getDragAfterElement(event.target, event.clientY);
-		  if (afterElement != null) 
-		  {
-		    $("#"+afterElement.id+"").addClass("myPlaceholder");
-		  } 
-    } 
-	}
-}
 /* events fired on the draggable target */
 document.addEventListener("drag", event => {
   //console.log("dragging");
@@ -76,85 +93,110 @@ document.addEventListener("dragleave", event => {
 
 document.addEventListener("drop", event => {
   // prevent default action (open as link for some elements)
-  event.preventDefault();
+    event.preventDefault();
+   
+   // when the item is dropped in between 1  & 2 remove the space above the 2 item
    var placeholderCheck= document.getElementsByClassName("myPlaceholder");
+   
    if(placeholderCheck.length > 0){
 			   for (var i = 0; i < placeholderCheck.length; i++) {
 			    placeholderCheck[i].classList.remove("myPlaceholder");
 			  }
    }
+
+
+
   	const afterElement = getDragAfterElement(event.target, event.clientY);
 		const draggableItem = document.querySelector('.dragging');
   // move dragged element to the selected drop target
   if (event.target.classList.contains("dropzone")) {
-    //event.target.classList.remove("dragover");
-    //dragged.parentNode.removeChild(dragged);
     
     // this wil put the grid-col in the frame
   if (event.target.classList.contains("content-parent") && dragged.classList.contains("grid-col"))
   {
   
-    		  if (afterElement == null) {
+    		  if (afterElement == null) 
+    		  {
 				      event.target.appendChild(draggableItem);
 				  } 
-				  else {
-
-				  	 
+				  else 
+				  {
 				  		event.target.insertBefore(draggableItem, afterElement);
-              const grabAfterElement = $("#"+afterElement.id+"");
-        			      
+              const grabAfterElement = $("#"+afterElement.id+"");     
+		 			}
 
-		 					}
-					     assignGridSequence();		
-					     get_item(dragged);
-						   show_controls(dragged);
-   
-  }
-  //this will put the item in grid-col
-else if (event.target.parentNode.parentNode.classList.contains("grid-col") && dragged.classList.contains("child-item")){
-     
-      if (afterElement == null) {
-				      event.target.appendChild(draggableItem);
-				  } 
-				  else {
-
-				  	 
-				  		event.target.insertBefore(draggableItem, afterElement);
-              const grabAfterElement = $("#"+afterElement.id+"");
-            
-				      
-
-		 					}
+     assignGridSequence();		
      get_item(dragged);
 	   show_controls(dragged);
-	   assignItemSequence();
-	   //showattribs(dragged.getAttribute('name'),dragged.id);
-
-
-    }
-
-   if (event.target.classList.contains("content-parent") && !dragged.classList.contains("grid-col")){
-
-     alert("You need to add a Grid Column First");
+	   saveParent(dragged);
    
-   }
+  }
+
+  //this will put the item in grid-col
+else if (event.target.parentNode.parentNode.classList.contains("grid-col") && dragged.classList.contains("child-item"))
+{
+     
+      if (afterElement == null) 
+      {
+				event.target.appendChild(draggableItem);
+			
+			} 
+			
+			else 
+			{
+
+	  		event.target.insertBefore(draggableItem, afterElement);
+        const grabAfterElement = $("#"+afterElement.id+"");
+
+		 	}
+     get_item(dragged);
+	   
+	   if(dragged.getAttribute('name')!="Incremental_tabs"){
+	   show_controls(dragged);
+	   }
+	   assignItemSequence();
+	   if(dragged.getAttribute('name')=="Incremental_tabs"){
+	   	saveParent(dragged);
+	   }
+
+	   //showattribs(dragged.getAttribute('name'),dragged.id); 
+	   //Note: Probably need this in the future so don't remove it 
+	   //				- calls the the form pop-up when item is dropped
 
 
-	// const parent = $('.content-parent');
-	// // Get the number of child elements
-  // const draggedId=dragged.id;
-	// const childIndex = parent.children().index($('#'+draggedId+''));
-	//console.log(childIndex);
-	//alert('you are here .. 0');
-	 
+}
+    else if(event.target.classList.contains("tab-parent") && dragged.classList.contains("grid-col"))
+  {
+  
+    		  if (afterElement == null) 
+    		  {
+				      event.target.appendChild(draggableItem);
+				  } 
+				  else 
+				  {
+				  		event.target.insertBefore(draggableItem, afterElement);
+              const grabAfterElement = $("#"+afterElement.id+"");
+		 		  }
+
+   assignGridSequence2();		
+   get_item(dragged);
+   show_controls(dragged);
+  
+   
+  }
+
+   if (event.target.classList.contains("content-parent") && !dragged.classList.contains("grid-col"))
+   	{ alert("You need to add a Grid Column First"); }
+   
+if (event.target.classList.contains("tab-parent") && !dragged.classList.contains("grid-col"))
+	  { alert("You need to add a Grid Column First"); }
+
 	//handleDrop(event);
    
 	//event.target.appendChild(itm)
 	//console.log(dragged.id);
 	//console.log(event.target.id);
   }
-  
- 
   
 });
 
@@ -217,20 +259,29 @@ function show_controls(dropedItem){
 				},
 				success: function(response)  {
 					//alert(response);
-					var result = $.trim(response);
+					
+						var result = $.trim(response);
 					if(result==="success"){
 					  $("#"+itmid).remove();
+					
 					}
 				}
 			})
-			
 	  }
-	  
   }
   
   function showattribs(itemtype, divid){
+			var itemSequence = $("#"+divid).attr('data-item-seq');
+			var parentId=$("#"+divid).closest('.grid-col').attr('id');
+			if(itemtype=="tab_link"){
+				parentId=$("#"+divid).closest('.child-item').attr('id');
+				console.log(parentId);
+			}
+			// console.log(parentId);
+			//console.log(itemSequence);
 			var datastring;
-			datastring = "itemtype="+itemtype+"&divid="+divid;
+
+			datastring = "itemtype="+itemtype+"&divid="+divid+"&itemSequence="+itemSequence+"&parentId="+parentId;
 			//alert(datastring);			
 			$.ajax({    //create an ajax request to load_page.php
 				type: "POST",
@@ -280,15 +331,73 @@ function show_controls(dropedItem){
       }
 			
 			}
+
+
+// this function is for the the incremental tabs
+					function assignGridSequence2(){
+				if ( dragged.classList.contains("grid-col"))
+      {
+					const parent = $('.tab-parent');
+					var parentId;
+					// Iterate through each parent element
+					parent.parent().each(function() {
+					  // Check if the current parent element has the active class
+					  if ($(this).hasClass('active')) {
+					    // Retrieve the ID of the parent element
+					     parentId = $(this).attr('data-tab-number');
+					    
+					  }
+					});
+					var childIndex= parentId; // grabbing the tab id
+							     
+				//NOTE : make sure that dragged.id is not empty
+				   childIndex = childIndex+"-"+parent.children().index($('#'+dragged.id+''));
+				  dragged.setAttribute('data-item-seq',childIndex);
+				  const element = $('#'+dragged.id+''); // Replace 'elementId' with the actual ID or selector of the target element
+		      element.siblings().each(function() {
+				  const siblingElement = $(this);
+				  const siblingId = siblingElement.attr('id');
+				  var childIndex= parentId; 
+				  childIndex = childIndex+"-"+parent.children().index($('#' + siblingId));
+				  siblingElement.attr('data-item-seq', childIndex);
+		  
+		  		});
+      }
+			
+			}
+
+
+
+
 			function assignItemSequence(){
 
 					const parent =dragged.parentNode.parentNode.previousElementSibling.parentElement;
 		      const parentGridType=parent.getAttribute('data-item-grid');
+
+		      	if(parentGridType!="grid-12"){
+		      		var dataItemGridPosition = dragged.parentElement.dataset.gridPosition;
+
+		      	}
+
+
+
 		      const parentGridSequence=parent.getAttribute('data-item-seq');
 		      var dataItemSequence="("+parentGridType+")-"+parentGridSequence;
 		      const itemChildID=$("#"+parent.id+"").find("#"+dragged.id+"").index();
 		       dataItemSequence= dataItemSequence +"-"+ itemChildID;
 		       dragged.setAttribute('data-item-seq',dataItemSequence);
+
+
+		       if(parentGridType!="grid-12"){
+		      		var originalValue = dragged.getAttribute('data-item-seq');
+
+							// Append the new value to the existing value
+							var newValue = originalValue + '-' + dataItemGridPosition;
+
+							// Set the attribute with the updated value
+							dragged.setAttribute('data-item-seq', newValue);
+		      	}
+
 
 		      const element = $('#'+dragged.id+''); // Replace 'elementId' with the actual ID or selector of the target element
 		      element.siblings().each(function() {
@@ -297,8 +406,218 @@ function show_controls(dropedItem){
 				  const itemChildID=$("#"+parent.id+"").find("#"+siblingId+"").index();
 		      dataItemSequence= "("+parentGridType+")-"+parentGridSequence +"-"+ itemChildID;
 		      siblingElement.attr('data-item-seq',dataItemSequence);
+		      	
+		      	if(parentGridType!="grid-12"){
+		      		var originalValue = siblingElement.attr('data-item-seq');
 
-		  		});
+							// Append the new value to the existing value
+							var newValue = originalValue + '-' + dataItemGridPosition;
+
+							// Set the attribute with the updated value
+							siblingElement.attr('data-item-seq', newValue);
+		      	}
+	
+		     	});
 
 
 			}
+
+			function remove_tab_item(tabId) {
+  const tabLink = document.querySelector(`a[href="#tab${tabId}"]`);
+  const tabContent = document.getElementById(`tab${tabId}`);
+
+  if (tabLink && tabContent) {
+
+
+		const previousTabLink = tabLink.parentNode.previousElementSibling;
+		const previousTabContent = tabContent.previousElementSibling;
+		const nextTabLink = tabLink.parentNode.nextElementSibling;
+		const nextTabContent = tabContent.nextElementSibling;
+
+
+    // Remove tab link
+    tabLink.parentNode.parentNode.removeChild(tabLink.parentNode);
+
+    // Remove tab content
+    tabContent.parentNode.removeChild(tabContent);
+
+
+    // Activate previous tab
+    if (previousTabLink && previousTabContent) 
+    {
+      previousTabLink.firstChild.classList.add('active');
+      previousTabContent.classList.add('active', 'show');
+    }
+    
+    //active next child
+    else if (nextTabLink && nextTabContent) 
+    {
+	    nextTabLink.firstChild.classList.add('active');
+	    nextTabContent.classList.add('active', 'show');
+    }
+
+    remove_item(`tablink${tabId}`);
+
+
+
+  }
+}
+
+
+function saveParent(draggedParent)
+{
+	console.log(draggedParent);
+	// Method 1 
+ 
+		// showattribs(dragged.getAttribute('name'),dragged.id);
+		// $.fancybox.close(true); 
+	  // setTimeout(()=> {
+    //      updateItem();
+    //   }
+    //   ,30);
+
+
+
+	// Method 2
+
+
+			if (draggedParent.id) {	
+				var vdivid = draggedParent.id;
+			}else {
+				var vdivid = 'NA';
+			}	
+			
+			
+			if (document.getElementById('module_name')) {	
+				var vmodule_name = document.getElementById('module_name').value;
+			}else {
+				var vmodule_name = '';
+			}
+			
+			if (document.getElementById('fieldid')) {
+				var vfieldid = document.getElementById('fieldid').value;
+			}else {
+				var vfieldid = '';
+			}
+			
+			if (dragged.getAttribute('name')) {
+				var vitemtype = dragged.getAttribute('name');
+			}else {
+				var vitemtype = '';
+			}
+			if (document.getElementById('display_pos')) {
+				var vdisplay_pos = document.getElementById('display_pos').value;
+			}else {
+				var vdisplay_pos = '';
+			}
+			
+			if (dragged.getAttribute('name')) {
+				var vfield_label = dragged.getAttribute('name');
+			}else {
+				var vfield_label = '';
+			}
+			if (dragged.getAttribute('name')) {
+				var vfield_name = dragged.getAttribute('name');
+			}else {
+				var vfield_name = '';
+			}
+			if (dragged.getAttribute('name')) {
+				var vfield_type = dragged.getAttribute('name');
+			}else {
+				var vfield_type = '';
+			}
+			if (document.getElementById('isrequired')) {
+				var visrequired = document.getElementById('isrequired').value;
+			}else {
+				var visrequired = '';
+			}
+			
+			if (dragged.getAttribute('data-item-seq')) {
+				var vdisplay_seq = dragged.getAttribute('data-item-seq');
+			}else {
+				var vdisplay_seq = '';
+			}
+			if (document.getElementById('default_value')) {
+				var vdefault_value = document.getElementById('default_value').value;
+			}else {
+				var vdefault_value = '';
+			}
+			if (document.getElementById('range_min')) {
+				var vrange_min = document.getElementById('range_min').value;
+			}else {
+				var vrange_min = '';
+			}
+			if (document.getElementById('range_max')) {
+				var vrange_max = document.getElementById('range_max').value;
+			}else {
+				var vrange_max = '';
+			}
+			if (document.getElementById('item_values')) {
+				var vitem_values = document.getElementById('item_values').value;
+			}else {
+				var vitem_values = '';
+			}
+			if (document.getElementById('list_type')) {
+				var vlist_type = document.getElementById('list_type').value;   
+			}else {
+				var vlist_type = '';
+			}
+			if (document.getElementById('staticlist')) {
+				var vstaticlist = document.getElementById('staticlist').value;  
+			}else {
+				var vstaticlist = '';
+			}
+			if (document.getElementById('codelist')) {
+				var vcodelist = document.getElementById('codelist').value;
+			}else {
+				var vcodelist = '';
+			}
+			if (document.getElementById('newcodelist')) {
+				var vnewcodelist = document.getElementById('newcodelist').value;
+			}else {
+				var vnewcodelist = '';
+			}
+			if (document.getElementById('listmodulename')) {
+				var vlistmodulename = document.getElementById('listmodulename').value;
+			}else {
+				var vlistmodulename = '';
+			}
+			if (document.getElementById('listmoduleitem')) {
+				var  vlistmoduleitem = document.getElementById('listmoduleitem').value;
+			}else {
+				var vlistmoduleitem = '';
+			}
+			if (document.getElementById('onlistpag')) {
+				var  vonlistpag = document.getElementById('onlistpag').value;  
+			}else {
+				var vonlistpag = '';
+			}
+			//added by hoor
+			if (document.getElementById('parent_grid_id_input')) {
+				var  vparent_grid_id_input = document.getElementById('parent_grid_id_input').value;  
+			}else {
+				var vparent_grid_id_input = '';
+			}
+			
+			//alert("vdivid: "+vdivid);	
+			var datastring	= "vdivid="+vdivid+"&vmodule_name="+vmodule_name+"&vfieldid"+vfieldid+"&vitemtype="+vitemtype+"&vfield_label="+vfield_label+"&vfield_name="+vfield_name+"&vfield_type="+vfield_type+"&visrequired="+visrequired+
+								"&vdisplay_seq="+vdisplay_seq+"&vdefault_value="+vdefault_value+"&vrange_min="+vrange_min+"&vrange_max="+vrange_max+"&vitem_values="+vitem_values+"&vlist_type="+vlist_type+
+								"&vstaticlist="+vstaticlist+"&vcodelist="+vcodelist+"&vnewcodelist="+vnewcodelist+"&vlistmodulename="+vlistmodulename+"&vlistmoduleitem="+vlistmoduleitem+"&vonlistpag="+vonlistpag+"&vparent_grid_id_input="+vparent_grid_id_input;
+								
+								
+			
+			//alert("function updateItem is called, datastring: "+datastring);
+			
+			$.ajax({
+				url: "ajax_updateitem.php",
+				type : "POST",
+				cache : false,
+				data : datastring,
+				success: function(response)  {
+						  $("#"+vdivid).html(response); 
+					
+					
+					//console.log(document.getElementById('contentdiv').innerHTML);
+				}
+			})
+}
