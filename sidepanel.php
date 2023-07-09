@@ -617,7 +617,10 @@
 						<span class="col-12" id="<?php echo 'input_'.$itmid; ?>" >
 								<span id="<?php echo 'tabsContainer_'.$itmid; ?>" >
 							    <span class="nav nav-tabs" id="myTabs">
-							      
+							      <span class="nav-item" role="presentation">
+							      	<a class="nav-link active" href="#sampleTab" id="sampleTab" data-bs-toggle="tab" aria-selected="true" role="tab"><span>Tab 1</span> 
+							      </a>
+							      </span>
 							      <span class="nav-item">
 							        <a id="<?php echo 'addTabBtn_'.$itmid; ?>" class="nav-link btn btn-primary"  data-bs-toggle="tab" aria-selected="true" role="tab">+</a>
 							      </span>
@@ -625,7 +628,7 @@
 							  </span>
 
 							  <span class="<?php echo 'tab-content_'.$itmid; ?>  tab-content mt-3" >
-							  
+							  <span class="tab-pane fade active show" id="sampleTab" data-tab-number="tab1" role="tabpanel" aria-labelledby="#sampleTab"><span class=" list-group tab-parent mt-3"> </span></span>
 							  		
 							  	</span>
 							 </span>
@@ -703,7 +706,24 @@ const controlsSpan = document.createElement('span');
 newTabLink.addEventListener('hide.bs.tab', () => {
   controlsSpan.style.display = 'none';
 });
+
+
     tabCounter++;
+  });
+
+
+
+
+
+  tabsContainer.addEventListener('show.bs.tab', (event) => {
+    const targetTabLink = event.target;
+    const controlsSpan = targetTabLink.querySelector(`#controls_${tabCounter}_<?php echo $itmid; ?>`);
+    controlsSpan.style.display = 'inline';
+  });
+    tabsContainer.addEventListener('hide.bs.tab', (event) => {
+    const targetTabLink = event.target;
+    const controlsSpan = targetTabLink.querySelector(`#controls_${tabCounter}_<?php echo $itmid; ?>`);
+    controlsSpan.style.display = 'none';
   });
 
   document.addEventListener('DOMContentLoaded', () => {

@@ -477,16 +477,13 @@ a#addTabBtn {
 				data : datastring,
 				success: function(response)  {
 					//alert(response);
-					
-					
-						  $("#"+vdivid).html(response); 
-					
-					
-					//console.log(document.getElementById('contentdiv').innerHTML);
+				$("#"+vdivid).html(response); 
+				//console.log(document.getElementById('contentdiv').innerHTML);
 				}
 			})
 			
 			$.fancybox.close();
+			
 
 		}	
 		

@@ -110,7 +110,9 @@ document.addEventListener("drop", event => {
 		const draggableItem = document.querySelector('.dragging');
   // move dragged element to the selected drop target
   if (event.target.classList.contains("dropzone")) {
-    
+    if(dragged.classList.contains("grid-col")){
+    	 saveParent(dragged);
+    }
     // this wil put the grid-col in the frame
   if (event.target.classList.contains("content-parent") && dragged.classList.contains("grid-col"))
   {
@@ -128,7 +130,7 @@ document.addEventListener("drop", event => {
      assignGridSequence();		
      get_item(dragged);
 	   show_controls(dragged);
-	   saveParent(dragged);
+	  
    
   }
 
@@ -264,6 +266,8 @@ function show_controls(dropedItem){
 					if(result==="success"){
 					  $("#"+itmid).remove();
 					
+					}else if(result=="3"){
+						alert("This item has a child. Try deleting that first");
 					}
 				}
 			})
@@ -455,11 +459,8 @@ function show_controls(dropedItem){
 	    nextTabLink.firstChild.classList.add('active');
 	    nextTabContent.classList.add('active', 'show');
     }
-
     remove_item(`tablink${tabId}`);
-
-
-
+  
   }
 }
 
@@ -594,9 +595,14 @@ function saveParent(draggedParent)
 			}
 			//added by hoor
 			if (document.getElementById('parent_grid_id_input')) {
-				var  vparent_grid_id_input = document.getElementById('parent_grid_id_input').value;  
+				var  vparent_grid_id_input = "";  
 			}else {
 				var vparent_grid_id_input = '';
+			}
+
+
+			if(vfield_type=="Incremental_tabs"){
+				var vparent_grid_id_input= $("#"+vdivid).closest('.grid-col').attr('id');
 			}
 			
 			//alert("vdivid: "+vdivid);	
@@ -604,7 +610,7 @@ function saveParent(draggedParent)
 								"&vdisplay_seq="+vdisplay_seq+"&vdefault_value="+vdefault_value+"&vrange_min="+vrange_min+"&vrange_max="+vrange_max+"&vitem_values="+vitem_values+"&vlist_type="+vlist_type+
 								"&vstaticlist="+vstaticlist+"&vcodelist="+vcodelist+"&vnewcodelist="+vnewcodelist+"&vlistmodulename="+vlistmodulename+"&vlistmoduleitem="+vlistmoduleitem+"&vonlistpag="+vonlistpag+"&vparent_grid_id_input="+vparent_grid_id_input;
 								
-								
+					
 			
 			//alert("function updateItem is called, datastring: "+datastring);
 			
@@ -619,5 +625,7 @@ function saveParent(draggedParent)
 					
 					//console.log(document.getElementById('contentdiv').innerHTML);
 				}
+
 			})
+
 }

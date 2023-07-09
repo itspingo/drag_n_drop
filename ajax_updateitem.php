@@ -586,7 +586,7 @@
 
 			
 				<span><?php echo $vfield_label; ?></span>
-				<span id="controls_<?php echo $vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="font-size: 12px; margin-left: 30px;">
+				<span id="controls_<?php echo str_replace("tablink", "", $vdivid) ; ?>" class="col-12 float-right item_icons item_icons_show" style="font-size: 12px; margin-left: 30px;">
 					<a style="cursor:pointer;color:blue;" onclick="showattribs('tab_link', '<?php echo $vdivid; ?>')" draggable="false">
 						<i class="bi bi-gear"></i>
 					</a>
@@ -677,14 +677,8 @@ else if($vitemtype=='grid-3'){ ?>
 			
 <?php }
  else if($vitemtype =="Incremental_tabs"){ ?>
-<span class="row" style="display: none;">
-	<span class="col-12 float-left" id="<?php echo 'label_'.$vdivid; ?>" >
-		<label style="background-color:white;font-size:18px"><?php echo $vfield_label; ?></label>
-	</span>
-	<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >
-		<a style="cursor:pointer;color:blue;"  onClick="showattribs('Incremental_tabs', <?php echo $vdivid; ?>)" >
-			<i class="bi bi-gear"></i>
-		</a>	
+<span class="row" >
+	<span id="<?php echo 'controls_'.$vdivid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right" >	
 		<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $vdivid; ?>)">
 			<i class="bi bi-trash"></i>
 		</a>
@@ -827,9 +821,37 @@ const controlsSpan = document.createElement('span');
 newTabLink.addEventListener('hide.bs.tab', () => {
   controlsSpan.style.display = 'none';
 });
+
+
+tabsContainer.addEventListener('show.bs.tab', (event) => {
+    const targetTabLink = event.target;
+    let tabContentId = targetTabLink.getAttribute('id');
+    tabContentId = tabContentId.replace("tablink", "");
+    const controlsSpan = document.querySelector(`#controls_${tabContentId}`);
+  
+    controlsSpan.style.display = 'inline';
+  });
+    tabsContainer.addEventListener('hide.bs.tab', (event) => {
+    const targetTabLink = event.target;
+    let tabContentId = targetTabLink.getAttribute('id');
+    tabContentId = tabContentId.replace("tablink", "");
+    const controlsSpan = document.querySelector(`#controls_${tabContentId}`);
+  
+    controlsSpan.style.display = 'none';
+  });
+
+
+
+
+
+
+
+
+
     tabCounter++;
   });
 
+  addTabBtn.click();
   document.addEventListener('DOMContentLoaded', () => {
     const myTabs = new bootstrap.Tab(tabsContainer);
     myTabs.show();

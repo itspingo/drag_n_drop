@@ -45,7 +45,8 @@ if($vmodule_id != ''){
 	echo $sqlupdt;
 	if(mysqli_query($dbcon, $sqlupdt)){
 		$sqlflds = "update dznr_module_fields set
-						moduleid = '".$vmodule_id."'
+						moduleid = '".$vmodule_id."',
+						module_name='".$vmodule_name."'
 					where (moduleid = '' or
 						  moduleid is NULL)
 					 /* and user_id = '".$vusrid."' */
@@ -70,7 +71,8 @@ if($vmodule_id != ''){
 	if(mysqli_query($dbcon, $sqlinst)){
 		$vmodule_id2 = mysqli_insert_id($dbcon);
 		$sqlflds = "update dznr_module_fields set
-						moduleid = '".$vmodule_id2."'
+						moduleid = '".$vmodule_id2."',
+						module_name='".$vmodule_name."'
 					where (moduleid = '' or
 						  moduleid is NULL)
 					 /* and user_id = '".$vusrid."' */
