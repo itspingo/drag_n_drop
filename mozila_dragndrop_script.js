@@ -110,9 +110,7 @@ document.addEventListener("drop", event => {
 		const draggableItem = document.querySelector('.dragging');
   // move dragged element to the selected drop target
   if (event.target.classList.contains("dropzone")) {
-    if(dragged.classList.contains("grid-col")){
-    	 saveParent(dragged);
-    }
+   
     // this wil put the grid-col in the frame
   if (event.target.classList.contains("content-parent") && dragged.classList.contains("grid-col"))
   {
@@ -198,6 +196,9 @@ if (event.target.classList.contains("tab-parent") && !dragged.classList.contains
 	//event.target.appendChild(itm)
 	//console.log(dragged.id);
 	//console.log(event.target.id);
+	 if(dragged.classList.contains("grid-col")){
+    	 saveParent(dragged);
+    }
   }
   
 });
@@ -603,6 +604,20 @@ function saveParent(draggedParent)
 
 			if(vfield_type=="Incremental_tabs"){
 				var vparent_grid_id_input= $("#"+vdivid).closest('.grid-col').attr('id');
+			}
+
+			//grab the grid to check if the parent is incremental tab or not 
+			if(draggedParent.classList.contains("grid-col")){
+				  let parentElement = draggedParent.parentElement;
+			    while (parentElement !== null) {
+			    	
+			      if (parentElement.getAttribute('name') === 'Incremental_tabs') {
+			        console.log("Element with ID '" + draggedParent.id + "' is a child of the incremental tab.");
+			      var vparent_grid_id_input= parentElement.getAttribute("id");
+			      console.log(vparent_grid_id_input);
+			      }
+			      parentElement = parentElement.parentElement;
+			    }
 			}
 			
 			//alert("vdivid: "+vdivid);	
