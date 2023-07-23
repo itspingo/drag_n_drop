@@ -280,7 +280,7 @@ function show_controls(dropedItem){
 			var parentId=$("#"+divid).closest('.grid-col').attr('id');
 			if(itemtype=="tab_link"){
 				parentId=$("#"+divid).closest('.child-item').attr('id');
-				console.log(parentId);
+				//console.log(parentId);
 			}
 			// console.log(parentId);
 			//console.log(itemSequence);
@@ -387,7 +387,8 @@ function show_controls(dropedItem){
 
 
 		      const parentGridSequence=parent.getAttribute('data-item-seq');
-		      var dataItemSequence="("+parentGridType+")-"+parentGridSequence;
+		      //var dataItemSequence="("+parentGridType+")-"+parentGridSequence;
+		      var dataItemSequence=parentGridSequence;
 		      const itemChildID=$("#"+parent.id+"").find("#"+dragged.id+"").index();
 		       dataItemSequence= dataItemSequence +"-"+ itemChildID;
 		       dragged.setAttribute('data-item-seq',dataItemSequence);
@@ -409,7 +410,12 @@ function show_controls(dropedItem){
 				  const siblingElement = $(this);
 				  const siblingId = siblingElement.attr('id');
 				  const itemChildID=$("#"+parent.id+"").find("#"+siblingId+"").index();
-		      dataItemSequence= "("+parentGridType+")-"+parentGridSequence +"-"+ itemChildID;
+		      //dataItemSequence= "("+parentGridType+")-"+parentGridSequence +"-"+ itemChildID;
+		      dataItemSequence= parentGridSequence +"-"+ itemChildID;
+		      
+
+
+
 		      siblingElement.attr('data-item-seq',dataItemSequence);
 		      	
 		      	if(parentGridType!="grid-12"){
@@ -468,7 +474,7 @@ function show_controls(dropedItem){
 
 function saveParent(draggedParent)
 {
-	console.log(draggedParent);
+	//console.log(draggedParent);
 	// Method 1 
  
 		// showattribs(dragged.getAttribute('name'),dragged.id);
@@ -612,9 +618,9 @@ function saveParent(draggedParent)
 			    while (parentElement !== null) {
 			    	
 			      if (parentElement.getAttribute('name') === 'Incremental_tabs') {
-			        console.log("Element with ID '" + draggedParent.id + "' is a child of the incremental tab.");
+			      //  console.log("Element with ID '" + draggedParent.id + "' is a child of the incremental tab.");
 			      var vparent_grid_id_input= parentElement.getAttribute("id");
-			      console.log(vparent_grid_id_input);
+			      //console.log(vparent_grid_id_input);
 			      }
 			      parentElement = parentElement.parentElement;
 			    }
