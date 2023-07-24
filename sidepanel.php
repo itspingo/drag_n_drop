@@ -564,7 +564,7 @@
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 							<label style="font-size:20px"><b>Sub-Module</b></label>
 						</span>
-						<span id="<?php echo '*'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 							<a style="cursor:pointer;color:blue;"  onClick="showattribs('submodule', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
 							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 						</span>

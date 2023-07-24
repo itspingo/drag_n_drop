@@ -119,9 +119,15 @@ a#addTabBtn {
   }
 }
 
-.myPlaceholder {
-      margin-top: 50px;
-    }
+.myPlaceholder{
+  margin-top: 80px;
+  }
+  .bottomSpace{
+  	padding-bottom: 80px;
+  }
+
+  
+
 </style>
 
   </head>

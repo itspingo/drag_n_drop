@@ -8,9 +8,11 @@ let vsidepanel;
 function updateSpacing(){
 	if (event.target.classList.contains("dropzone")) {
     if(event.target.getElementsByClassName("list-group-item").length > 0){
+
 	   const afterElement = getDragAfterElement(event.target, event.clientY);
 		  if (afterElement != null) 
 		  {
+		  	event.target.classList.remove("bottomSpace");	
 		    $("#"+afterElement.id+"").addClass("myPlaceholder");
 		  } 
     } 
@@ -70,6 +72,10 @@ document.addEventListener("dragend", event => {
 /* events fired on the drop targets */
 document.addEventListener("dragover", event => {
   // prevent default to allow drop
+   if (event.target.classList.contains("dropzone")) {
+   event.target.style.backgroundColor ="#eee";
+   event.target.classList.add("bottomSpace");	
+   }
    updateSpacing();
    assignGridSequence();
   event.preventDefault();
@@ -79,6 +85,7 @@ document.addEventListener("dragenter", event => {
   // highlight potential drop target when the draggable element enters it
   if (event.target.classList.contains("dropzone")) {
      event.target.classList.add("dragover");
+     
 
   }
 
@@ -96,11 +103,16 @@ document.addEventListener("drop", event => {
     event.preventDefault();
    
    // when the item is dropped in between 1  & 2 remove the space above the 2 item
-   var placeholderCheck= document.getElementsByClassName("myPlaceholder");
-   
+   var placeholderCheck= document.getElementsByClassName("myPlaceholder");  
    if(placeholderCheck.length > 0){
-			   for (var i = 0; i < placeholderCheck.length; i++) {
+			  for (var i = 0; i < placeholderCheck.length; i++) {
 			    placeholderCheck[i].classList.remove("myPlaceholder");
+			  }
+   }
+     var bottomSpaceCheck= document.getElementsByClassName("bottomSpace");  
+   if(bottomSpaceCheck.length > 0){
+			  for (var i = 0; i < bottomSpaceCheck.length; i++) {
+			    bottomSpaceCheck[i].classList.remove("bottomSpace");
 			  }
    }
 
@@ -110,7 +122,11 @@ document.addEventListener("drop", event => {
 		const draggableItem = document.querySelector('.dragging');
   // move dragged element to the selected drop target
   if (event.target.classList.contains("dropzone")) {
-   
+  	
+		   event.target.style.backgroundColor ="#F9F9F9";
+		   $('.content-parent').css('background-color', '#F9F9F9');
+		   event.target.classList.remove("bottomSpace");
+
     // this wil put the grid-col in the frame
   if (event.target.classList.contains("content-parent") && dragged.classList.contains("grid-col"))
   {
