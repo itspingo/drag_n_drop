@@ -126,7 +126,24 @@ a#addTabBtn {
   	padding-bottom: 80px;
   }
 
-  
+     .icon-box{
+ background-color: #e7f1ff;
+    border-radius: 5px;
+    border-color: #bdd8ff;
+    border-width: 1px;
+    border-style: solid;
+   
+    }
+ .name {
+    font-size: .8125rem;
+}
+    .icon-box i{
+    	color: #0c63e4;
+    	font-size: 30px;
+    }
+    .icon-box img{
+    	max-width: 100%;
+    }
 
 </style>
 

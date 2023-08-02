@@ -151,17 +151,26 @@ document.addEventListener("drop", event => {
   //this will put the item in grid-col
 else if (event.target.parentNode.parentNode.classList.contains("grid-col") && dragged.classList.contains("child-item"))
 {
+
      
       if (afterElement == null) 
       {
-				event.target.appendChild(draggableItem);
+
+				let originalString = draggableItem.id;
+				let newString = originalString.replace("iconItem_", "");
+				dragged= document.getElementById(newString);
+				event.target.appendChild(dragged);
+				//event.target.appendChild(draggableItem);
 			
 			} 
 			
 			else 
 			{
-
-	  		event.target.insertBefore(draggableItem, afterElement);
+				let originalString =draggableItem.id;
+				let newString = originalString.replace("iconItem_", "");
+				dragged= document.getElementById(newString);
+	  		event.target.insertBefore(dragged, afterElement);
+	  		//event.target.insertBefore(draggableItem, afterElement);
         const grabAfterElement = $("#"+afterElement.id+"");
 
 		 	}
@@ -186,11 +195,19 @@ else if (event.target.parentNode.parentNode.classList.contains("grid-col") && dr
   
     		  if (afterElement == null) 
     		  {
-				      event.target.appendChild(draggableItem);
+							let originalString = draggableItem.id;
+							let newString = originalString.replace("iconItem_", "");
+							dragged= document.getElementById(newString);
+							event.target.appendChild(dragged);
+				      //event.target.appendChild(draggableItem);
 				  } 
 				  else 
 				  {
-				  		event.target.insertBefore(draggableItem, afterElement);
+							let originalString =draggableItem.id;
+							let newString = originalString.replace("iconItem_", "");
+							dragged= document.getElementById(newString);
+							event.target.insertBefore(dragged, afterElement);
+				  		//event.target.insertBefore(draggableItem, afterElement);
               const grabAfterElement = $("#"+afterElement.id+"");
 		 		  }
 

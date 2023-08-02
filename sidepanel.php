@@ -76,22 +76,57 @@
       <div class="accordion-body">
       			
 				
-				<p name="column_heading" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item"  data-item-seq="0" >
-				<span>
-					<span class="row">						
-						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-							<a style="cursor:pointer;color:blue;"  onClick="showattribs('column_heading', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
-							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
-							
+			<!-- 	<p name="column_heading" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item"  data-item-seq="0" >
+					<span>
+						<span class="row">						
+							<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+								<a style="cursor:pointer;color:blue;"  onClick="showattribs('column_heading', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
+								<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+								
+							</span>
+						</span>
+						<span class="row">
+							<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
+								<span class="font-size:34px;"><b>Column Heading</b></span>
+							</span>
 						</span>
 					</span>
-					<span class="row">
-						<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
-							<span class="font-size:34px;"><b>Column Heading</b></span>
-						</span>
-					</span>
-				</span>
-			</p>
+				</p> -->
+
+
+
+
+
+
+     			<span class=" col-6 child-item" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+     				
+	       		<span class="d-block text-body-emphasis text-decoration-none " >
+		          <span class="d-block px-3 py-4 mb-2  text-center rounded icon-box">
+		            <img src="images/column_heading.png">
+		          </span>
+        		</span>
+
+        		<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+        					<p name="column_heading" id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item"  data-item-seq="0" >
+										<span>
+											<span class="row">						
+												<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+													<a style="cursor:pointer;color:blue;"  onClick="showattribs('column_heading', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
+													<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+													
+												</span>
+											</span>
+											<span class="row">
+												<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
+													<span class="font-size:34px;"><b>Column Heading</b></span>
+												</span>
+											</span>
+										</span>
+									</p>
+        		</span>
+     			</span>
+
+
       </div>
     </div>
   </div>
@@ -124,25 +159,70 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        	<p name="text_input"  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
-				
-					<span class="row">
-						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
-							<label>Text Input</label>
-						</span>
-						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-							<a style="cursor:pointer;color:blue;"  onClick="showattribs('text_input', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
-							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
-							
-						</span>
-					</span>
-					<span class="row">
-						<span class="col-12" id="<?php echo 'input_'.$itmid; ?>">
-							<input type="text" class="form-control" />
-						</span>
-					</span>
-				
-			</p>
+
+
+
+
+
+
+
+
+
+
+				<span class=" col-6  child-item" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+	       		<span class="d-block text-body-emphasis text-decoration-none " >
+		          <span class="d-block px-3 py-4 mb-2  text-center rounded icon-box">
+		            <img src="images/text_input.png">
+		          </span>
+        		</span>
+
+        		<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+        				<p name="text_input"  id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+									<span class="row">
+										<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
+											<label>Text Input</label>
+										</span>
+										<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+											<a style="cursor:pointer;color:blue;"  onClick="showattribs('text_input', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
+											<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+										</span>
+									</span>
+									<span class="row">
+										<span class="col-12" id="<?php echo 'input_'.$itmid; ?>">
+											<input type="text" class="form-control" />
+										</span>
+									</span>
+								
+							</p>
+        		</span>
+     			</span>
+
+
+
+
+
+
+						<!-- 	<p name="text_input"  id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+									<span class="row">
+										<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
+											<label>Text Input</label>
+										</span>
+										<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+											<a style="cursor:pointer;color:blue;"  onClick="showattribs('text_input', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
+											<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+										</span>
+									</span>
+									<span class="row">
+										<span class="col-12" id="<?php echo 'input_'.$itmid; ?>">
+											<input type="text" class="form-control" />
+										</span>
+									</span>
+								
+							</p> -->
+
+
+
+        	
 			
 			<p name="number_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
 				
@@ -786,3 +866,11 @@ newTabLink.addEventListener('hide.bs.tab', () => {
 			
 			
 		
+
+
+
+
+
+
+
+
