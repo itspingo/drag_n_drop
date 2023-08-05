@@ -127,11 +127,11 @@ a#addTabBtn {
   }
 
      .icon-box{
- background-color: #e7f1ff;
-    border-radius: 5px;
-    border-color: #bdd8ff;
-    border-width: 1px;
-    border-style: solid;
+ background-color: none;
+    border-radius: none;
+    border-color: none;
+    border-width: 0px;
+    border-style: none;
    
     }
  .name {

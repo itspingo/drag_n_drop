@@ -101,8 +101,8 @@
      			<span class=" col-6 child-item" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
      				
 	       		<span class="d-block text-body-emphasis text-decoration-none " >
-		          <span class="d-block px-3 py-4 mb-2  text-center rounded icon-box">
-		            <img src="images/column_heading.png">
+		          <span class="d-block   text-center rounded icon-box">
+		            <img  draggable="false" src="images/column_heading.png">
 		          </span>
         		</span>
 
@@ -171,8 +171,8 @@
 
 				<span class=" col-6  child-item" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
 	       		<span class="d-block text-body-emphasis text-decoration-none " >
-		          <span class="d-block px-3 py-4 mb-2  text-center rounded icon-box">
-		            <img src="images/text_input.png">
+		          <span class="d-block   text-center rounded icon-box">
+		            <img  draggable="false" src="images/text_input.png">
 		          </span>
         		</span>
 
