@@ -318,141 +318,17 @@ a#addTabBtn {
     </div>
     <div id="sortablelist" class="dropzone col-sm-8 col-md-9 col-lg-9 list-group content-parent" style="min-height:250px; background-color:#F9F9F9; border:1px black dashed; min-height: 550px;"  > 
     	 
-<p name="grid-12" id="76171" draggable="false" class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
 
-	<span class="row">	
-		<span id="controls_76171" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right">
-			<a style="cursor:pointer;color:red;" onclick="remove_item(76171)" draggable="false">
-				<i class="bi bi-trash"></i>
-			</a>
-		</span>
-	</span>
+    	<?php 
+    	$srcode = $result['form_code'];
+    		$srcode = str_replace("&lt;", "<", $srcode);
+$srcode = str_replace("&gt;", ">", $srcode);
+$srcode = str_replace("&apos;", "'", $srcode);
+$srcode = str_replace("&quot;", '"', $srcode);
 
-	<span class="row">
-		<span class="col-12 dropzone dragover">
-			<p name="column_heading" id="37948" draggable="true" class="list-group-item child-item" data-item-seq="(grid-12)-0-0">
-				<span class="row">
-				<span id="controls_37948" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right">
-					<a style="cursor:pointer;color:blue;" onclick="showattribs('column_heading', 37948)">
-						<i class="bi bi-gear"></i>
-					</a>	
-				</span>
-				</span>
-
-				<span class="row">
-					<span class="col-12" >
-						<span align="left" class="font-size:34px;"><b>lorem ipsum</b></span> 
-					</span>
-				</span>
-			</p>
-		</span>
-	</span>
-
-</p>
-
-
-
-
-
-<p name="grid-6" id="46192" draggable="false" class="list-group-item grid-col" data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="1">
-
-
-
-
-			
-				
-				<span class="row">	
-					<span id="controls_46192" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right">
-						<a style="cursor:pointer;color:red;" onclick="remove_item(46192)" draggable="false"><i class="bi bi-trash"></i></a>
-					</span>
-				</span>
-				 <span class="row">
-					<span class="col-6 dropzone" data-grid-position="0"><p name="email_input" id="42632" draggable="true" class="list-group-item child-item" data-item-seq="(grid-6)-1-0-0">
-
-
-
-
-			<span class="row">
-				<span class="col-6 float-left" >
-					<label>Email Address</label>
-				</span>
-				<span >
-					<a style="cursor:pointer;color:blue;" onclick="showattribs('password_input', 42632)" draggable="false"><i class="bi bi-gear"></i></a>	
-					<a style="cursor:pointer;color:red;" onclick="remove_item(42632)" draggable="false"><i class="bi bi-trash"></i></a>
-				</span>
-			</span>
-			<span class="row">
-				<span class="col-12" >
-					<input type="email" name="email_address" id="email_address" class="form-control" value="">
-					<div style="color:red;font-size:12px;"></div>				</span>
-			</span>
-				
-			
-</p></span>
-					<span class="col-6 dropzone dragover" data-grid-position="1"><p name="password_input" id="72820" draggable="true" class="list-group-item child-item" data-item-seq="(grid-6)-1-0-1">
-
-
-
-
-			<span class="row">
-				<span class="col-6 float-left" >
-					<label>Password</label>
-				</span>
-				<span >
-					<a style="cursor:pointer;color:blue;" onclick="showattribs('password_input', 72820)"><i class="bi bi-gear"></i></a>	
-					
-				</span>
-			</span>
-			<span class="row">
-				<span class="col-12" >
-					<input type="password" name="password" id="password" class="form-control" value="">
-					<div style="color:red;font-size:12px;"></div>				</span>
-			</span>
-				
-				
-</p></span>
-				</span>
-			
-
-			
-			
-</p><p name="grid-12" id="27537" draggable="false" class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="2" data-item-grid="grid-12">
-
-
-
-
-			
-				
-				 <span class="row">	
-					<span id="controls_27537" class="col-12 float-right item_icons item_icons_show" style="align:right;" align="right">
-						<a style="cursor:pointer;color:red;" onclick="remove_item(27537)" draggable="false"><i class="bi bi-trash"></i></a>
-					</span>
-				</span>
-				 <span class="row">
-					<span class="col-12 dropzone dragover"><p name="check_box" id="6930" draggable="true" class="list-group-item child-item" data-item-seq="(grid-12)-2-0">
-
-
-
-
-			<span class="row">
-				<span class="col-6 float-left" >
-					<label><input type="checkbox" name="remember_me" id="remember_me" value="Y">Remember Me</label>
-				</span>
-				<span >
-					<a style="cursor:pointer;color:blue;" onclick="showattribs('check_box', 6930)"><i class="bi bi-gear"></i></a>	
-					
-				</span>
-			</span>	
-
-</p></span>
-				</span>
-			
-
-			
-			
-</p>
-
- ?>
+    		echo $srcode ;
+    	
+    	?> 
 	  </div>
   </div>
 

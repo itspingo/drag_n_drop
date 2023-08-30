@@ -133,12 +133,21 @@ document.addEventListener("drop", event => {
   
     		  if (afterElement == null) 
     		  {
-				      event.target.appendChild(draggableItem);
+    		  	let originalString = draggableItem.id;
+						let newString = originalString.replace("iconItem_", "");
+						dragged= document.getElementById(newString);
+						event.target.appendChild(dragged);
+				     // event.target.appendChild(draggableItem);
 				  } 
 				  else 
 				  {
-				  		event.target.insertBefore(draggableItem, afterElement);
-              const grabAfterElement = $("#"+afterElement.id+"");     
+				  	let originalString =draggableItem.id;
+						let newString = originalString.replace("iconItem_", "");
+						dragged= document.getElementById(newString);
+						event.target.insertBefore(dragged, afterElement);
+						//event.target.insertBefore(draggableItem, afterElement);
+						const grabAfterElement = $("#"+afterElement.id+"");
+				  		
 		 			}
 
      assignGridSequence();		

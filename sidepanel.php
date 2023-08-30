@@ -1,59 +1,163 @@
-       <center>
-       <div style="width: 90%; ">
-       	<label> Grid Columns</label>
-       	<p name="grid-12" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
-				 <span class="row" >	
-					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+<center>
+  <div style="width: 90%; ">
+    <label> Grid Columns</label>
+    <!-- Grid 12 Starts Here -->
+		<span class="list-group-item grid-col mb-3" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+
+			<span class="d-block text-body-emphasis text-decoration-none " >
+				<span class="d-block   text-center rounded icon-box">
+					<img  draggable="false" src="images/grid-12.png">
+				</span>
+			</span>
+
+			<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+				<div name="grid-12" id="<?php echo $itmid; ?>" draggable="true"   class="list-group-item grid-col mb-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
+					<span class="row" >	
+						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+						</span>
 					</span>
-				</span>
-				 <span class="row" >
-					<span class="col-12 dropzone"  ></span>
-				</span>
-			</p>
-
-			<p name="grid-6" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
-				 <span class="row" >	
-					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+					<span class="row" >
+						<span class="col-12 dropzone"></span>
 					</span>
-				</span>
-				 <span class="row" >
-					<span class="col-6 dropzone" data-grid-position="0"  ></span>
-					<span class="col-6 dropzone" data-grid-position="1"></span>
-				</span>
-			</p>
+				</div>
+			</span>
+		</span>
+    <!-- Grid 12 Ends Here -->
 
-			<p  name="grid-4" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
-				 <span class="row" >	
-					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+    <!-- Grid 6 Starts Here -->
+		<span class="list-group-item grid-col mb-3" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+
+			<span class="d-block text-body-emphasis text-decoration-none " >
+				<span class="d-block   text-center rounded icon-box">
+					<img  draggable="false" src="images/grid-6.png">
+				</span>
+			</span>
+
+			<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+				<div name="grid-6" id="<?php echo $itmid; ?>" draggable="true"    class="list-group-item grid-col mb-3"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+					<span class="row" >	
+						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+						</span>
 					</span>
-				</span>
-				 <span class="row" >
-					<span class="col-4 dropzone" data-grid-position="0"></span>
-					<span class="col-4 dropzone" data-grid-position="1"></span>
-					<span class="col-4 dropzone" data-grid-position="2"></span>
-				</span>
-			</p>
-
-			<p name="grid-3" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
-				<span class="row" >	
-					<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
-						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+					<span class="row" >
+						<span class="col-6 dropzone" data-grid-position="0"></span>
+						<span class="col-6 dropzone" data-grid-position="1"></span>
 					</span>
+				</div>
+			</span>
+		</span>
+    <!-- Grid 6 Ends Here -->
+
+    <!-- Grid 4 Starts Here -->
+		<span class="list-group-item grid-col mb-3" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+
+			<span class="d-block text-body-emphasis text-decoration-none " >
+				<span class="d-block text-center rounded icon-box">
+					<img  draggable="false" src="images/grid-4.png">
 				</span>
-				 <span class="row" >
-					<span class="col-3 dropzone" data-grid-position="0"></span>
-					<span class="col-3 dropzone" data-grid-position="1"></span>
-					<span class="col-3 dropzone" data-grid-position="2"></span>
-					<span class="col-3 dropzone" data-grid-position="3"></span>
+			</span>
+
+			<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+				<div  name="grid-4" id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item grid-col mb-3" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
+					<span class="row" >	
+						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+						</span>
+					</span>
+					<span class="row" >
+						<span class="col-4 dropzone" data-grid-position="0"></span>
+						<span class="col-4 dropzone" data-grid-position="1"></span>
+						<span class="col-4 dropzone" data-grid-position="2"></span>
+					</span>
+				</div>
+			</span>
+		</span>
+    <!-- Grid 4 Ends Here -->
+
+    <!-- Grid 3 Starts Here -->
+		<span class="list-group-item grid-col mb-3" draggable="true" style="padding-right:0px" id="<?php $itmid = rand(1,99999); echo "iconItem_".$itmid; ?>" >
+
+			<span class="d-block text-body-emphasis text-decoration-none " >
+				<span class="d-block   text-center rounded icon-box">
+					<img  draggable="false" src="images/grid-3.png">
 				</span>
-			</p>
+			</span>
+
+			<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
+				<div name="grid-3" id="<?php echo $itmid; ?>" draggable="true"    class="list-group-item grid-col mb-3" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+					<span class="row" >	
+						<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+							<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+						</span>
+					</span>
+					<span class="row" >
+						<span class="col-3 dropzone" data-grid-position="0"></span>
+						<span class="col-3 dropzone" data-grid-position="1"></span>
+						<span class="col-3 dropzone" data-grid-position="2"></span>
+						<span class="col-3 dropzone" data-grid-position="3"></span>
+					</span>
+				</div>
+			</span>
+		</span>
 
 
-       </div>    
-       </center>
+<!-- Old Grid With Out Image Starts Here -->
+ <!-- All The Grids Are Commented -->
+<!--    	<div name="grid-12" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"   class="list-group-item grid-col mb-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" data-item-grid="grid-12">
+			<span class="row" >	
+				<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+					<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+				</span>
+			</span>
+			 <span class="row" >
+				<span class="col-12 dropzone"  ></span>
+			</span>
+		</div>
+
+		<div name="grid-6" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col pb-3"  data-item-grid="grid-6" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			 <span class="row" >	
+				<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+					<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+				</span>
+			</span>
+			 <span class="row" >
+				<span class="col-6 dropzone" data-grid-position="0"  ></span>
+				<span class="col-6 dropzone" data-grid-position="1"></span>
+			</span>
+		</div>
+
+		<div  name="grid-4" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col mb-3" data-item-grid="grid-4" style="margin-left:10px; margin-right:10px;" data-item-seq="0">
+			 <span class="row" >	
+				<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+					<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+				</span>
+			</span>
+			 <span class="row" >
+				<span class="col-4 dropzone" data-grid-position="0"></span>
+				<span class="col-4 dropzone" data-grid-position="1"></span>
+				<span class="col-4 dropzone" data-grid-position="2"></span>
+			</span>
+		</div>
+
+		<div name="grid-3" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item grid-col mb-3" data-item-grid="grid-3" style="margin-left:10px; margin-right:10px;" data-item-seq="0" >
+			<span class="row" >	
+				<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+					<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
+				</span>
+			</span>
+			 <span class="row" >
+				<span class="col-3 dropzone" data-grid-position="0"></span>
+				<span class="col-3 dropzone" data-grid-position="1"></span>
+				<span class="col-3 dropzone" data-grid-position="2"></span>
+				<span class="col-3 dropzone" data-grid-position="3"></span>
+			</span>
+		</div> -->
+<!-- Old Grid With Out Image Ends Here -->
+
+  </div>    
+</center>
 
 			
 
@@ -107,7 +211,7 @@
         		</span>
 
         		<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
-        					<p name="column_heading" id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item"  data-item-seq="0" >
+        					<div name="column_heading" id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3"  data-item-seq="0" >
 										<span>
 											<span class="row">						
 												<span id="<?php echo 'controls_'.$itmid; ?>" class="col-12 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
@@ -122,7 +226,7 @@
 												</span>
 											</span>
 										</span>
-									</p>
+									</div>
         		</span>
      			</span>
 
@@ -177,12 +281,12 @@
         		</span>
 
         		<span id="<?php echo 'actualItem_'.$itmid; ?>" style="display: none;">
-        				<p name="text_input"  id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+        				<div name="text_input"  id="<?php  echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 									<span class="row">
 										<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 											<label>Text Input</label>
 										</span>
-										<span id="<?php echo 'controls_'.$itmid; ?>" class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
+										<span class="col-3 float-right item_icons item_icons_show" style="align:right;display:none;" align="right" >
 											<a style="cursor:pointer;color:blue;"  onClick="showattribs('text_input', <?php echo $itmid; ?>)" ><i class="bi bi-gear"></i></a>	
 											<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 										</span>
@@ -193,7 +297,7 @@
 										</span>
 									</span>
 								
-							</p>
+							</div>
         		</span>
      			</span>
 
@@ -224,7 +328,7 @@
 
         	
 			
-			<p name="number_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="number_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -242,9 +346,9 @@
 						</span>
 					</span>
 				
-			</p>
+			</div>
 			
-			<p name="date_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="date_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -262,9 +366,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="password_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="password_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -282,9 +386,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="email_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="email_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -302,9 +406,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="url_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="url_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -322,9 +426,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="display_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="display_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -342,9 +446,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="nondb_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="nondb_input" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -362,9 +466,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="text_area" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="text_area" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 				<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -382,9 +486,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="drop_down" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="drop_down" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -406,9 +510,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="multi_choice" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="multi_choice" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -430,11 +534,11 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 
 
 
-			<p name="check_box" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="check_box" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span class="row">
 					<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 						<label><input type="checkbox" /> Check Box</label>
@@ -444,9 +548,9 @@
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="radio_button" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="radio_button" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span class="row">
 					<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
 						<label><input type="radio"  /> Radio Button</label>
@@ -457,10 +561,10 @@
 						<a style="cursor:pointer;color:red;" onClick="remove_item(<?php echo $itmid; ?>)" ><i class="bi bi-trash"></i></a>
 					</span>
 				</span>
-			</p>
+			</div>
 
 
-			<p name="referenced_data" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="referenced_data" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -483,7 +587,7 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
       </div>
     </div>
   </div>
@@ -495,7 +599,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p name="single_file" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+        <div name="single_file" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -513,9 +617,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="multiple_files" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" >
+			<div name="multiple_files" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" >
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -533,9 +637,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="single_image" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="single_image" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -553,9 +657,9 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
-			<p name="multiple_images" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0">
+			<div name="multiple_images" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0">
 				<span>
 					<span class="row">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -573,7 +677,7 @@
 						</span>
 					</span>
 				</span>
-			</p>
+			</div>
 			
       </div>
     </div>
@@ -592,7 +696,7 @@
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p name="rich_text_editor" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item"  data-item-seq="0">
+        <div name="rich_text_editor" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item mb-3"  data-item-seq="0">
 				
 					<span class="row">
 						<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -613,7 +717,7 @@
 						</span>
 					</span>
 				
-			</p>
+			</div>
 			
 			
 			
@@ -638,7 +742,7 @@
     </h2>
     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        	<p name="submodule" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item" data-item-seq="0" style="margin-left:10px;margin-right:10px;" >
+        	<div name="submodule" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"    class="list-group-item child-item mb-3" data-item-seq="0" style="margin-left:10px;margin-right:10px;" >
 				
 					<span class="row" style="background-color:#ccccff;">
 						<span class="col-9 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -660,7 +764,7 @@
 						</span>
 					</span>
 				
-			</p>
+			</div>
 			
 			
 			
@@ -682,7 +786,7 @@
     </h2>
     <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p name="Incremental_tabs" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item"  data-item-seq="0">
+        <div name="Incremental_tabs" id="<?php $itmid = rand(1,99999); echo $itmid; ?>" draggable="true"  class="child-item mb-3"  data-item-seq="0">
 				
 					<span class="row" style="display: none;">
 						<span class="col-12 float-left" id="<?php echo 'label_'.$itmid; ?>" >
@@ -814,7 +918,7 @@ newTabLink.addEventListener('hide.bs.tab', () => {
 })();
 
 	</script>
-			</p>
+			</div>
 			
 			
 			
