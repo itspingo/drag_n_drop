@@ -87,20 +87,20 @@ a#addTabBtn {
 		margin-left:5px;
 	}
 	#divfields_list::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 
-  margin-left: 10px;
-}
-#divfields_list::-webkit-scrollbar-track {
-  background-color: transparent;
+	margin-left: 10px;
+	}
+	#divfields_list::-webkit-scrollbar-track {
+	background-color: transparent;
 
-}
-#divfields_list::-webkit-scrollbar-thumb {
-   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-   background-color:  rgba(12, 99, 228, 0.8);
-   border-radius: 5px;
-   max-height: 5px;
-}
+	}
+	#divfields_list::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color:  rgba(12, 99, 228, 0.8);
+	border-radius: 5px;
+	max-height: 5px;
+	}
 	#sortablelist{
 		min-height: 550px;
 	}
@@ -142,7 +142,7 @@ a#addTabBtn {
     	font-size: 30px;
     }
     .icon-box img{
-    	max-width: 100%;
+     width: 100% !important;
     }
 
 </style>

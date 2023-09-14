@@ -145,6 +145,13 @@ a#addTabBtn {
 .myPlaceholder {
       margin-top: 50px;
     }
+    .icon-box i{
+    	color: #0c63e4;
+    	font-size: 30px;
+    }
+    .icon-box img{
+     width: 100% !important;
+    }
 </style>
 
   </head>
