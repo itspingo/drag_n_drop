@@ -175,7 +175,7 @@ a#addTabBtn {
 					<input type="hidden"  name="moduleid"  id="moduleid"  value="<?php echo $moduleid; ?>" />
 					<input type="hidden"  name="userid"  id="userid"  value="<?php echo $usrid; ?>" />
 					
-					<label class="strong">Module Name</label>
+					<label class="strong">Module Name 123 </label>
 					<input type="text"  name="module_name"  id="module_name" class="form-control" value="" required />
 					<?php echo '<p style="color:red;font-size:12px;">'.$error['module_name'].'</p>'; ?>
 					
